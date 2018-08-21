@@ -8,6 +8,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.date :dob
       t.boolean :financial_aid
       t.integer :major_id
+      t.string :username
+      t.string :password_digest
       t.timestamps
     end
   end

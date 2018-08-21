@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_171433) do
 
   create_table "professor_courses", force: :cascade do |t|
     t.integer "professor_id"
-    t.integer "student_id"
+    t.integer "course_id"
     t.string "location"
     t.date "start_date"
     t.date "end_date"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_171433) do
     t.string "gender"
     t.string "ethnicity"
     t.date "dob"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,6 +80,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_171433) do
     t.date "dob"
     t.boolean "financial_aid"
     t.integer "major_id"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,4 +3,5 @@ class Professor < ApplicationRecord
     has_many :courses, through: :professor_courses
     has_many :student_professor_courses, through: :professor_courses
     has_many :students, through: :student_professor_courses
+    has_secure_password
 end

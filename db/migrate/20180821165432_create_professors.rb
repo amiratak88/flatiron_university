@@ -6,6 +6,8 @@ class CreateProfessors < ActiveRecord::Migration[5.2]
       t.string :gender
       t.string :ethnicity
       t.date :dob
+      t.string :username
+      t.string :password_digest
       t.timestamps
     end
   end
