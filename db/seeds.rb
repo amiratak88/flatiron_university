@@ -4,9 +4,9 @@ Course.create(title: "Sound on Film", description: "The final course in the soun
 Course.create(title: , description: )
 Course.create(title: , description: )
 #Engineering Courses
-Course.create(title: , description: )
-Course.create(title: , description: )
-Course.create(title: , description: )
+Course.create(title: "Electrical Engineering", description: "ELECTRICAL")
+Course.create(title: "Mechanical Engineering", description: "YEAHHHHHHHHH")
+Course.create(title: "Civil Engineering", description: "We bi=uild stuff!")
 #Government
 Course.create(title: "Comparative Politics and Policy", description: "This course provides the analytical knowledge and practical skills to understand comparative politics and policy worldwide.  It addresses a range of foundational topics:  (i) Concepts, theories, evidence, and methods in comparative politics; (ii) Classifying varieties of democratic and autocratic regimes, and processes of regime transition and consolidation; (iii) Institutional designs, including electoral systems, party systems, types of executives, and federalism; (iv) Channels of mass mobilization including through voting, protest activism, civil society organizations, media, civil disobedience, terrorism, and revolutionary upheavals; and (v) The performance of governance and public policies.  The course covers these issues by utilizing the methods and techniques of comparative politics. You will learn about polities worldwide – as well as thereby enriching and deepening your understanding of your own nation.")
 Course.create(title: "Advanced Microeconomic Analysis II", description: "This is the second semester of a rigorous two-semester sequence in advanced microeconomic analysis for MPA/ID students. Topics covered include general equilibrium, externalities and public goods, welfare economics, game theory, economics of information, incentives, and contracts. Theory is illustrated by relevant applications to international development and other areas.
@@ -15,9 +15,9 @@ Prerequisites: Multivariate calculus and constrained optimization; intermediate 
 Course.create(title: , description: )
 
 #Students
-Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
-Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
-Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
+Student.create(first_name: "Amirata", last_name: "Khodaparast", gender: "M", ethnicity: "Iranian", dob: Date.new(1996, 29, 5), financial_aid: true, major_id: 1)
+Student.create(first_name: "Roberto", last_name: "Buso-Garcia", gender: "M", ethnicity: "Latinx", dob: Date.new(1972, 5, 11), financial_aid: false, major_id: 2)
+Student.create(first_name: "John", last_name: "Doe", gender: "F", ethnicity: "Cucasian", dob: Date.new(1990, 10, 10), financial_aid: true, major_id: 3)
 Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
 Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
 Student.create(first_name: , last_name: , gender: , ethnicity: , dob: , financial_aid: , major_id: )
