@@ -1,10 +1,17 @@
 <br/>
-<%= @professor.full_name %>
-<br/><br/>
+<b>Course Title<br/></b>
 <%= @course.title %>
 <br/><br/>
+<b>Course Description<br/></b>
 <%= @course.description %>
 <br/><br/>
+<b>Instructor<br/></b>
+<%= @professor.full_name %>
+<br/><br/>
+
+<%= form_tag "/professors/#{@professor.id}/grade", method: "post" do %>
+  <input type="hidden" name="_method" value="patch">
+  <!-- <input type="hidden" name="id" value="#{@stu_prof_cou_to_be_graded_id}"> -->
 
 <table class="table table-striped">
   <thead>
@@ -12,31 +19,33 @@
       <th scope="col">#</th>
       <th scope="col">Student</th>
       <th scope="col">Major</th>
-      <th scope="col">Financial Aid</th>
+      <th scope="col">Grade</th>
     </tr>
   </thead>
   <tbody>
+    <% @students.each do |student| %>
+    <% @row += 1 %>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row"><%= @row %>
+      </th>
+      <% @stu_prof_cou_to_be_graded_id = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id).id %>
+      <td><%= student.full_name %></td>
+      <td><%= student.major.title %></td>
+      <td><%= @stu_prof_cou_to_be_graded_id %></td>
+      <td>
+        <input type="hidden" name="grades[]" value="<%= @stu_prof_cou_to_be_graded_id %>">
+        <select name="grades[]">
+          <option value="A+">A+</option>
+          <option value="A">A</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+        </select>
+      </td>
+    <% end %>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+      </tbody>
 </table>
-
-<% @students.each do |student| %>
-<%= student.full_name %>
+    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+      Submit
+    <% end %>
 <% end %>
