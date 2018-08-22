@@ -14,7 +14,11 @@ class ProfessorsController < ApplicationController
     private
 
     def authorized
-        redirect_to login_path unless session[:user_id] && session[:position] == "professor"
+      if session[:user_id]
+        redirect_to student_path(Student.find(params[:id])) unless session[:position] == "professor"
+      else
+        redirect_to login_path
+      end
     end
 
     def set_professor

@@ -28,9 +28,4 @@ You still need to take <%= @student.required_courses.length - @student.required_
 </div>
 </div>
 
-<br/><br/>
-Your requirements are:<br/><br/>
-<% @student.required_courses.each do |course| %>
-<%= link_to course, course_path(course) %><br/><br/>
-  <% end  %>
 </div>

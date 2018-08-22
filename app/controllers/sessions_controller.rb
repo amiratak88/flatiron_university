@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     end
 
     def delete
-        session.delete(:logged_in)
+        session.delete(:user_id)
         session.delete(:position)
     end
 
