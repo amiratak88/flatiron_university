@@ -10,12 +10,14 @@
     <% end %>
     <br/>
 <%= form_tag '/login', method: :post do %>
-<div class="form-group">
-    <%= label_tag :username %>
-    <%= text_field_tag :username %><br/><br/>
-
-    <%= label_tag :password %>
-    <%= password_field_tag :password %><br/><br/>
+<div class="form-row">
+  <div class="form-group col-md-6">
+<%= label_tag :username %><br/>
+<%= text_field_tag :username %>
+    <br/><br/>
+  <%= label_tag :password %><br/>
+  <%= password_field_tag :password %><br/><br/>
+</div></div>
       <%= button_tag(type: "submit", class: "btn btn-primary") do %>
         Submit
       <% end %>
