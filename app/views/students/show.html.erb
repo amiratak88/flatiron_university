@@ -18,9 +18,9 @@ You're currently enrolled in the following courses:
 <br/>
 <% end %>
 
-You still need to take <%= @student.required_courses.length - @student.courses_taken.length %> courses to fulfill your Major's requirements.<br/>
+You still need to take <%= @student.required_courses.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.<br/>
 <br/>
-<% pro = (@student.courses_taken.length.to_f / @student.required_courses.length.to_f) * 100 %>
+<% pro = (@student.required_courses_taken.length.to_f / @student.required_courses.length.to_f) * 100 %>
 <% spro = pro.to_i.to_s + "%" %>
 <div class="progress">
   <div class="progress-bar" role="progressbar" style="width: <%= spro %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
