@@ -8,11 +8,10 @@ class StudentsController < ApplicationController
 
     def authorized
       if session[:user_id]
-
         if session[:position] == "professor"
-          redirect_to professor_path(Professor.find(session[:user_id]))
+          redirect_to professor_path(session[:user_id])
         elsif session[:user_id] != params[:id]
-          redirect_to "/students/#{session[:user_id]}"
+          redirect_to student_path(session[:user_id])
         end
       else
         redirect_to login_path

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         @current = (Student.all + Professor.all).find{ |inst| inst.username == params[:username] }
 
         if @current && @current.authenticate(params[:password])
-            session[:user_id] = @current.id
+            session[:user_id] = @current.id.to_s
             session[:position] = @current.class.to_s.downcase
             redirect_to @current
         else
