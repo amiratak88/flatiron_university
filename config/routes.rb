@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#delete', as: 'logout'
 
   ########### PROFESSORS ###############
-
-  get '/professors/:id/students',to: 'professors#my_students', as: 'my_students'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

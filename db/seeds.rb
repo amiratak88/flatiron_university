@@ -1,3 +1,9 @@
+#Majors
+Major.create(title: "Film & Media", description: "Film & Media Description Coming SOon (or not) ")
+Major.create(title: "RANDOM MAJOR", description: "RANDOM MAJOR DESCRIPTION")
+Major.create(title: "Government", description: "The graduate school of public policy offers you the opportunity to learn in an atmosphere of inquiry and open dialogue through a comprehensive range of degree and Executive Education programs. The HKS experience is a vibrant exchange of ideas and expertise, a give and take of energy and inspiration. Whether your goal is to earn a graduate degree or gain new skills and knowledge through an executive program, you will learn from our faculty of renowned scholars and seasoned practitioners while engaging with visiting luminaries, global thought leaders, and talented classmates.")
+
+
 
 #Film Courses
 Course.create(title: "Sound on Film", description: "The final course in the sound concentration sequence, this course is focused on composing and sound designing a longer-form capstone work in collaboration with a filmmaker also in the MA program. Final grade is based on the quality of the finished product and an evaluation by the instructor of how the student incorporated knowledge and techniques introduced in the previous three classes.")
@@ -24,9 +30,9 @@ Student.create(first_name: "John", last_name: "Doe", gender: "F", ethnicity: "Ca
 
 #Professors
 Professor.create(first_name: "Glenfield", last_name: "Payne", gender: "M", ethnicity: "Black", dob: Date.new(1965, 8, 10), username: "prof1", password: "prof1")
-Professor.create(first_name: "prof 2", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1975, 10, 1), username: "prof2", password: "prof2")
-Professor.create(first_name: "prof 3", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1977, 10, 1), username: "prof3", password: "prof3")
-Professor.create(first_name: "prof 4", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1979, 10, 1), username: "prof4", password: "prof4")
+Professor.create(first_name: "prof 2", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1975, 10, 1), username: "prof2", password: "prof2")
+Professor.create(first_name: "prof 3", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1977, 10, 1), username: "prof3", password: "prof3")
+Professor.create(first_name: "prof 4", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1979, 10, 1), username: "prof4", password: "prof4")
 Professor.create(first_name: "Jie" , last_name: "Bai", gender: "F", ethnicity: "Asian" , dob: Date.new(1980, 11, 30), username: "prof5", password: "prof5")
 Professor.create(first_name: "Pippa", last_name: "Norris", gender: "F", ethnicity: "Caucasian", dob: Date.new(1939, 1, 1), username: "prof6", password: "prof6")
 
@@ -72,8 +78,3 @@ Requirement.create(major_id: 3, course_id: 4)
 Requirement.create(major_id: 3, course_id: 7)
 Requirement.create(major_id: 3, course_id: 8)
 Requirement.create(major_id: 3, course_id: 1)
-
-#Majors
-Major.create(title: "Film & Media", description: "Film & Media Description Coming SOon (or not) ")
-Major.create(title: "RANDOM MAJOR", description: "RANDOM MAJOR DESCRIPTION")
-Major.create(title: "Government", description: "The graduate school of public policy offers you the opportunity to learn in an atmosphere of inquiry and open dialogue through a comprehensive range of degree and Executive Education programs. The HKS experience is a vibrant exchange of ideas and expertise, a give and take of energy and inspiration. Whether your goal is to earn a graduate degree or gain new skills and knowledge through an executive program, you will learn from our faculty of renowned scholars and seasoned practitioners while engaging with visiting luminaries, global thought leaders, and talented classmates.")

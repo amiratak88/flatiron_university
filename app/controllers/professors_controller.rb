@@ -6,11 +6,6 @@ class ProfessorsController < ApplicationController
         set_professor
     end
 
-    def my_students
-        set_professor
-        render :students
-    end
-
     private
 
     def authorized
