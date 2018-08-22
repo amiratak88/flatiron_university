@@ -35,7 +35,7 @@
       <td>
         <!-- <input type="hidden" name="grades[]" value="<%= @stu_prof_cou_to_be_graded_id %>"> -->
 
-        <%= collection_select :"student_professor_courses[#{@stu_prof_cou_to_be_graded_id}]", :grade, [Grade.new(@stu_prof_cou_to_be_graded_id, "A+"), Grade.new(@stu_prof_cou_to_be_graded_id, "A"), Grade.new(@stu_prof_cou_to_be_graded_id, "B+"), Grade.new(@stu_prof_cou_to_be_graded_id, "B")], :grade, :grade %>
+        <%= collection_select :"student_professor_courses[#{@stu_prof_cou_to_be_graded_id}]", :grade, [Grade.new(@stu_prof_cou_to_be_graded_id, "A+"), Grade.new(@stu_prof_cou_to_be_graded_id, "A"), Grade.new(@stu_prof_cou_to_be_graded_id, "A-"), Grade.new(@stu_prof_cou_to_be_graded_id, "B+"), Grade.new(@stu_prof_cou_to_be_graded_id, "B"), Grade.new(@stu_prof_cou_to_be_graded_id, "B-"), Grade.new(@stu_prof_cou_to_be_graded_id, "C+"), Grade.new(@stu_prof_cou_to_be_graded_id, "B+")], :grade, :grade %>
         <!-- <select name="grades[]">
           <option value="A+">A+</option>
           <option value="A">A</option>

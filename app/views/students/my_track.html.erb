@@ -6,7 +6,7 @@
 <%# First table: Taken Courses %>
 <% @student.student_professor_courses.each do |stu_prof_cou| %>
     <h6><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></h6>
-    <h6><%= link_to stu_prof_cou.professor.full_name, professor_path(prof_cou.professor) %></h6>
-    <h6><%# prof_cou.semester %></h6>
-    <h6><% stu_prof_cou.grade %></h6>
+    <h6><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></h6>
+    <h6><%= stu_prof_cou.professor_course.semester %></h6>
+    <h6><%= stu_prof_cou.grade %></h6>
 <% end %>
