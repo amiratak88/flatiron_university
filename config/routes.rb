@@ -9,5 +9,11 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
+
+  delete '/logout', to: 'sessions#delete', as: 'logout'
+
+  ########### PROFESSORS ###############
+
+  get '/professors/:id/students',to: 'professors#my_students', as: 'my_students'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
