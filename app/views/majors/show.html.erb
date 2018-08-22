@@ -1,0 +1,10 @@
+<div class="container-fluid">
+<%=  @major.title %><br/><br/>
+<%= @major.description %><br/><br/>
+
+
+Requirements:<br/><br/>
+<% @major.courses.each do |course| %>
+<%= link_to course.title, course_path(course) %><br/><br/>
+  <% end  %>
+</div>

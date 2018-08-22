@@ -7,5 +7,5 @@
 
 <%# We can sort the students aphabetically %>
 <% @professor.students.each do |stu| %>
-    <li><a href="<%= student_path(stu) %>"><%= stu.name %></a></li>
+    <li><a href="<%= student_path(stu) %>"><%= stu.full_name %></a></li>
 <% end %>

@@ -7,7 +7,7 @@ class Student < ApplicationRecord
     has_secure_password
     validate :cross_table_uniqueness
 
-  
+
 
     def full_name
       "#{first_name} #{last_name}"
@@ -49,7 +49,7 @@ class Student < ApplicationRecord
 
   def required_courses
     self.major.requirements.map do |requirement|
-      Course.find(requirement.course_id).title
+      requirement.course
     end
   end
 
@@ -58,6 +58,8 @@ class Student < ApplicationRecord
       Course.find(course.id).title
     end
   end
+
+  ###################### VALIDATIONS ##################
 
   def required_courses_taken
     req_courses = self.major.requirements.map do |course|
