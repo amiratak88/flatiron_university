@@ -1,0 +1,36 @@
+<br/>
+<div class="container-fluid">
+  <p class="lead">
+Welcome back, <%= @student.full_name %>!
+</p>
+<br/>
+<% major = @student.major %>
+Your Major is <%= link_to major.title, major %>.
+
+<br/><br/>
+Your overall GPA is: <%= @student.overall_average %>
+<br/><br/>
+
+You're currently enrolled in the following courses:
+<br/><br/>
+<% @student.courses.each do |course| %>
+<li><%= link_to course.title, course_path(course) %></li>
+<br/>
+<% end %>
+
+You still need to take <%= @student.required_courses.length - @student.courses_taken.length %> courses to fulfill your Major's requirements.<br/>
+<br/>
+<% pro = (@student.courses_taken.length.to_f / @student.required_courses.length.to_f) * 100 %>
+<% spro = pro.to_i.to_s + "%" %>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= spro %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+<%= pro.to_i %>%
+</div>
+</div>
+
+<br/><br/>
+Your requirements are:<br/><br/>
+<% @student.required_courses.each do |course| %>
+<%= link_to course, course_path(course) %><br/><br/>
+  <% end  %>
+</div>
