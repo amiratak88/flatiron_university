@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   ########### PROFESSORS ###############
 
   get '/professors/:id/students',to: 'professors#my_students', as: 'my_students'
+
+  get '/professors/:id/:course_id', to: 'professors#my_course', as: 'my_course'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
