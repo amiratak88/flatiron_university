@@ -2,6 +2,11 @@ class StudentsController < ApplicationController
 
     before_action :authorized
 
+    def my_track
+      @student = Student.find(params[:id])
+      render :my_track
+    end
+
     def show
         @student = Student.find(params[:id])
     end

@@ -30,9 +30,9 @@ Student.create(first_name: "Taura", last_name: "Musgrove", gender: "F", ethnicit
 
 #Professors
 Professor.create(first_name: "Glenfield", last_name: "Payne", gender: "M", ethnicity: "Black", dob: Date.new(1965, 8, 10), username: "prof1", password: "prof1")
-Professor.create(first_name: "prof 2", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1975, 10, 1), username: "prof2", password: "prof2")
-Professor.create(first_name: "prof 3", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1977, 10, 1), username: "prof3", password: "prof3")
-Professor.create(first_name: "prof 4", last_name: " ", gender: " ", ethnicity: " ", dob: Date.new(1979, 10, 1), username: "prof4", password: "prof4")
+Professor.create(first_name: "prof 2", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1975, 10, 1), username: "prof2", password: "prof2")
+Professor.create(first_name: "prof 3", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1977, 10, 1), username: "prof3", password: "prof3")
+Professor.create(first_name: "prof 4", last_name: "blah", gender: "F", ethnicity: "blah", dob: Date.new(1979, 10, 1), username: "prof4", password: "prof4")
 Professor.create(first_name: "Jie" , last_name: "Bai", gender: "F", ethnicity: "Asian" , dob: Date.new(1980, 11, 30), username: "prof5", password: "prof5")
 Professor.create(first_name: "Pippa", last_name: "Norris", gender: "F", ethnicity: "Caucasian", dob: Date.new(1939, 1, 1), username: "prof6", password: "prof6")
 

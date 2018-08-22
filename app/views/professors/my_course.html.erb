@@ -23,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @students.each do |student| %>
+    <% @students.each_with_index do |student, idx| %>
     <% @row += 1 %>
     <tr>
       <th scope="row"><%= @row %>
@@ -33,13 +33,15 @@
       <td><%= student.major.title %></td>
       <td><%= @stu_prof_cou_to_be_graded_id %></td>
       <td>
-        <input type="hidden" name="grades[]" value="<%= @stu_prof_cou_to_be_graded_id %>">
-        <select name="grades[]">
+        <!-- <input type="hidden" name="grades[]" value="<%= @stu_prof_cou_to_be_graded_id %>"> -->
+
+        <%= collection_select :"student_professor_courses[#{@stu_prof_cou_to_be_graded_id}]", :grade, [Grade.new(@stu_prof_cou_to_be_graded_id, "A+"), Grade.new(@stu_prof_cou_to_be_graded_id, "A"), Grade.new(@stu_prof_cou_to_be_graded_id, "B+"), Grade.new(@stu_prof_cou_to_be_graded_id, "B")], :grade, :grade %>
+        <!-- <select name="grades[]">
           <option value="A+">A+</option>
           <option value="A">A</option>
           <option value="A-">A-</option>
           <option value="B+">B+</option>
-        </select>
+        </select> -->
       </td>
     <% end %>
     </tr>

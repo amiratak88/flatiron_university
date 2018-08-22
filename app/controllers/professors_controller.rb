@@ -24,11 +24,6 @@ class ProfessorsController < ApplicationController
       byebug
     end
 
-    def update
-      byebug
-    end
-
-
     private
 
     def authorized
