@@ -6,6 +6,11 @@ class Professor < ApplicationRecord
     has_secure_password
     validate :cross_table_uniqueness
 
+    def full_name
+      "#{first_name} #{last_name}"
+    end
+
+
     def cross_table_uniqueness
         condition1 = Student.find_by(username: username)
         condition2 = Professor.find_by(username: username)

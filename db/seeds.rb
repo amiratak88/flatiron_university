@@ -4,7 +4,6 @@ Major.create(title: "RANDOM MAJOR", description: "RANDOM MAJOR DESCRIPTION")
 Major.create(title: "Government", description: "The graduate school of public policy offers you the opportunity to learn in an atmosphere of inquiry and open dialogue through a comprehensive range of degree and Executive Education programs. The HKS experience is a vibrant exchange of ideas and expertise, a give and take of energy and inspiration. Whether your goal is to earn a graduate degree or gain new skills and knowledge through an executive program, you will learn from our faculty of renowned scholars and seasoned practitioners while engaging with visiting luminaries, global thought leaders, and talented classmates.")
 
 
-
 #Film Courses
 Course.create(title: "Sound on Film", description: "The final course in the sound concentration sequence, this course is focused on composing and sound designing a longer-form capstone work in collaboration with a filmmaker also in the MA program. Final grade is based on the quality of the finished product and an evaluation by the instructor of how the student incorporated knowledge and techniques introduced in the previous three classes.")
 Course.create(title: "Two", description: "???")
@@ -27,6 +26,7 @@ Course.create(title: "Nine", description: "???")
 Student.create(first_name: "Amirata", last_name: "Khodaparast", gender: "M", ethnicity: "Iranian", dob: Date.new(1996, 10, 5), financial_aid: true, major_id: 1, username: "amirata", password: "khodaparast")
 Student.create(first_name: "Roberto", last_name: "Buso-Garcia", gender: "M", ethnicity: "Latinx", dob: Date.new(1972, 5, 11), financial_aid: false, major_id: 2, username: "roberto", password: "buso-garcia")
 Student.create(first_name: "John", last_name: "Doe", gender: "F", ethnicity: "Caucasian", dob: Date.new(1990, 10, 10), financial_aid: true, major_id: 3, username: "john", password: "doe")
+Student.create(first_name: "Taura", last_name: "Musgrove", gender: "F", ethnicity: "Black", dob: Date.new(1998, 2, 5), financial_aid: true, major_id: 1, username: "taura", password: "musgrove")
 
 #Professors
 Professor.create(first_name: "Glenfield", last_name: "Payne", gender: "M", ethnicity: "Black", dob: Date.new(1965, 8, 10), username: "prof1", password: "prof1")
@@ -64,6 +64,7 @@ StudentProfessorCourse.create(professor_course_id: 1, student_id: 2, grade: "B-"
 StudentProfessorCourse.create(professor_course_id: 7, student_id: 2, grade: "D")
 StudentProfessorCourse.create(professor_course_id: 1, student_id: 3, grade: "A+")
 StudentProfessorCourse.create(professor_course_id: 8, student_id: 3, grade: "B-")
+StudentProfessorCourse.create(professor_course_id: 8, student_id: 4, grade: "D")
 
 #Requirements
 Requirement.create(major_id: 1, course_id: 1)

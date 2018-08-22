@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
     def delete
         session.delete(:user_id)
         session.delete(:position)
+        redirect_to login_path
     end
 
 end

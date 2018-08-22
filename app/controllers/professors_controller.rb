@@ -6,6 +6,20 @@ class ProfessorsController < ApplicationController
         set_professor
     end
 
+    def my_students
+        set_professor
+        render :students
+    end
+
+    def my_course
+      @professor = Professor.find(params[:id])
+      @course = Course.find(params[:course_id])
+
+      professor_course = ProfessorCourse.find_by(professor_id: params[:id], course_id: params[:course_id])
+
+      @students = professor_course.students
+    end
+
     private
 
     def authorized

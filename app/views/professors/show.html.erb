@@ -2,9 +2,23 @@
 <%= link_to "All Courses", courses_path %>
 
 <%= form_tag logout_path, method: :delete do %>
-    <%= submit_tag "Log Out" %>
+<br/>
+
+      <%= button_tag(type: "submit", class: "btn btn-danger btn-sm") do %>
+        Log Out
+      <% end %>
+    </div>
 <% end %>
+<br/><br/>
+
+  <div class="container-fluid">
+    <p class="lead">
+    Welcome back, Professor <%= @professor.full_name %>.
+    <br/><br/>
+
 
 <% @professor.courses.each do |course| %>
-    <li><a href="<%= course_path(course) %>"><%= course.title %></a></li>
+    <li><a href="<%= "/professors/#{@professor.id}/#{course.id}" %>"><%= course.title %></a></li>
 <% end %>
+
+</div>

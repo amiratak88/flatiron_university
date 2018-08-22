@@ -47,7 +47,7 @@ class Student < ApplicationRecord
       sum.to_f/total.length
     end
 
-  def required_courses
+  def required_courses_for_major
     self.major.requirements.map do |requirement|
       requirement.course
     end
@@ -55,18 +55,17 @@ class Student < ApplicationRecord
 
   def courses_taken
     self.courses.map do |course|
-      Course.find(course.id).title
+      Course.find(course.id)
     end
   end
 
-  ###################### VALIDATIONS ##################
-
+  #This should be the courses required by the major taken by the student.#
   def required_courses_taken
-    req_courses = self.major.requirements.map do |course|
-      Course.find(course.course_id)
+    self.required_courses_for_major.select do |course|
+      courses_taken.include?(course)
     end
-    req_courses - self.courses
   end
+
 
   def cross_table_uniqueness
       condition1 = Student.find_by(username: username)
