@@ -12,9 +12,7 @@ class ProfessorsController < ApplicationController
     end
 
     def my_course
-      @professor = Professor.find(params[:id])
-      @course = Course.find(params[:course_id])
-
+      @letters = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F"]
       @professor_course = ProfessorCourse.find_by(professor_id: params[:id], course_id: params[:course_id])
       @students = @professor_course.students
       @row = 0
@@ -24,6 +22,7 @@ class ProfessorsController < ApplicationController
       params[:grades_hash].each do |key, value|
           StudentProfessorCourse.find(key).update(grade: value[:grade])
       end
+
       flash[:errors] = ["Grades successfully submitted."]
       redirect_to professor_path(params[:id])
     end
