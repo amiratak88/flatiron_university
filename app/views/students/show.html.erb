@@ -1,14 +1,27 @@
+<head>
+<style>
+body {
+background-image: url("https://images.designtrends.com/wp-content/uploads/2015/11/30152626/Solid-Dark-Navy-Blue-Wallpaper2.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+div {
+  padding-left: 15px;
+}
+</style>
+</head>
+
 <br/>
 <div class="container-fluid">
-  <p class="lead">
-Welcome back, <%= @student.full_name %>!
-</p>
+  <h4 class="text-warning">Welcome back, <%= @student.full_name %>!</h4>
 <br/>
+<div class="lead text-white">
 <% major = @student.major %>
 Your Major is <%= link_to major.title, major %>.
 
 <br/><br/>
-Your overall GPA is: <%= @student.overall_average %>
+Your overall GPA is: <%= @student.overall_average.round(2) %>
 <br/><br/>
 
 You're currently enrolled in the following courses:
@@ -20,15 +33,13 @@ You're currently enrolled in the following courses:
 
 You still need to take <%= @student.required_courses_for_major.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.<br/>
 <br/>
-
+</div>
 <% pro = (@student.required_courses_taken.length.to_f / @student.required_courses_for_major.length.to_f) * 100 %>
 
 <% spro = pro.to_i.to_s + "%" %>
-
 <div class="progress">
   <div class="progress-bar" role="progressbar" style="width: <%= spro %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 <%= pro.to_i %>%
 </div>
 </div>
-
 </div>

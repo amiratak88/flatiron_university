@@ -6,13 +6,20 @@ background-position: center;
 background-attachment: fixed;
 }
 </style>
-<br/><br/>
-<div class="container">
-  <h4 class="display-4">Sign In</h4>
-  <br/>
+<br/>
+<div class="container-fluid">
+<h1 class="display-2">Amirata University</h1>
+<h1 class="font-italic">Learn to Love the Light</h1>
+</div>
+
+<% 7.times do %>
+<br>
+<% end %>
+<div class="container-fluid">
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
     <p class="text-light">
+    <br/>
     <%= error %>
     </p>
     <% end %>
