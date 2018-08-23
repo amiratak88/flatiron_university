@@ -7,6 +7,11 @@ class StudentsController < ApplicationController
       render :my_track
     end
 
+    def my_courses
+      @student = Student.find(params[:id])
+      render :my_courses
+    end
+
     def show
         @student = Student.find(params[:id])
     end
