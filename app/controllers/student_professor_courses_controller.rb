@@ -1,4 +1,5 @@
 class StudentProfessorCoursesController < ApplicationController
+    
     def drop_from_my_track
         set_target_and_student_id
         @target.destroy

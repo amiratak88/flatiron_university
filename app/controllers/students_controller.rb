@@ -22,6 +22,11 @@ class StudentsController < ApplicationController
         @student = Student.find(params[:id])
     end
 
+    def add_course
+      StudentProfessorCourse.create(student_id: , professor_course_id: 
+      redirect_to 
+    end
+
     def authorized
       if session[:user_id]
         if session[:position] == "professor"

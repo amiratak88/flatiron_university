@@ -71,13 +71,3 @@ end %>
 </table>
 
 </div>
-
-<%# ####### The table with add ability %>
-
-<% @required_prof_courses.each do |prof_cou| %>
-    <td><%= link_to prof_cou.course.title, course_path(prof_cou.course) %></td>
-    <td><%= link_to prof_cou.professor.full_name, prof_bio_path(prof_cou.professor) %></td>
-    <td><%= prof_cou.semester %></td>
-    <td><%= prof_cou.semester %></td>
-    <td><%# add action place holder %></td>
-<% end %>
