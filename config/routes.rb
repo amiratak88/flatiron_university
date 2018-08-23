@@ -22,5 +22,12 @@ Rails.application.routes.draw do
   get 'students/:id/my_courses', to: 'students#my_courses', as: 'my_courses'
   patch '/professors/:id/grade', to: 'professors#grade'
 
+  ################ StudentProfessorCourse #################
+
+  delete 'student_professor_courses/:id/drop_from_my_track', to:'student_professor_courses#drop_from_my_track'
+
+  delete 'student_professor_courses/:id/drop_from_my_courses', to:'student_professor_courses#drop_from_my_courses'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
