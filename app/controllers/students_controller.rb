@@ -4,6 +4,9 @@ class StudentsController < ApplicationController
 
     def my_track
       @student = Student.find(params[:id])
+      @required_prof_courses = ProfessorCourse.select do |prof_cou|
+        prof_cou.course.majors.include?(@student.major)
+      end
       render :my_track
     end
 
