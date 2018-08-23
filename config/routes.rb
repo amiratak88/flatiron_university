@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'students/:id/my_track', to: 'students#my_track', as: 'my_track'
   get 'students/:id/my_courses', to: 'students#my_courses', as: 'my_courses'
   patch '/professors/:id/grade', to: 'professors#grade'
-<<<<<<< HEAD
 
   ################ StudentProfessorCourse #################
 
@@ -30,8 +29,5 @@ Rails.application.routes.draw do
   delete 'student_professor_courses/:id/drop_from_my_courses', to:'student_professor_courses#drop_from_my_courses'
 
 
-=======
-  
->>>>>>> b5d11bc54668c043742f4101a9d4b6a170248a1f
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
