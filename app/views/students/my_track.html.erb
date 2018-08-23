@@ -1,23 +1,9 @@
-<head>
-<style>
-body {
-background-image: url("https://images.designtrends.com/wp-content/uploads/2015/11/30152626/Solid-Dark-Navy-Blue-Wallpaper2.jpg");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-}
-div {
-  padding-left: 15px;
-}
-</style>
-</head>
-
-<br/><br/>
-
 <div class="container-fluid">
 
 <h2 class="text-white"> <%= @student.first_name %>'s Major Track</h2>
-<% @first_table, @third_table = @student.student_professor_courses.partition do |stu_prof_cou|
+<% @first_table, @third_table = @student.student_professor_courses.select do |stu_prof_cou|
+    stu_prof_cou.professor_course.course.majors.include?(stu_prof_cou.student.major)
+end.partition do |stu_prof_cou|
     stu_prof_cou.grade.empty?
 end %>
 <br/><br/>
@@ -72,3 +58,5 @@ end %>
 </table>
 
 </div>
+
+
