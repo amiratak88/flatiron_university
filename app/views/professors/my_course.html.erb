@@ -4,13 +4,13 @@
     <div class="col-lg-6">
       <p class="lead">
         <u>Course Title<br/></u>
-        <%= @course.title %>
+        <%= @professor_course.course.title %>
         <br/><br/>
         <u>Course Description<br/></u>
-        <%= @course.description %>
+        <%= @professor_course.course.description %>
         <br/><br/>
         <u>Instructor<br/></u>
-        <%= @professor.full_name %>
+        <%= @professor_course.professor.full_name %>
         <br/><br/>
       </p>
       </div>
@@ -32,9 +32,7 @@
   </div>
 </div>
 
-<%= form_tag "/professors/#{@professor.id}/grade", method: "post" do %>
-  <input type="hidden" name="_method" value="patch">
-  <!-- <input type="hidden" name="id" value="#{@stu_prof_cou_to_be_graded_id}"> -->
+<%= form_tag "/professors/#{@professor_course.professor.id}/grade", method: "patch" do %>
 
 <table class="table table-striped">
   <thead>
@@ -46,24 +44,20 @@
     </tr>
   </thead>
   <tbody>
-    <% @students.each_with_index do |student, idx| %>
-    <% @row += 1 %>
+    <% @students.each_with_index do |student, i| %>
     <tr>
-      <th scope="row"><%= @row %>
+      <th scope="row"><%= i + 1 %>
       </th>
-      <% @stu_prof_cou_to_be_graded_id = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id).id %>
+      <% @stu_prof_cou_to_be_graded = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id) %>
       <td><%= student.full_name %></td>
       <td><%= student.major.title %></td>
       <td>
-        <!-- <input type="hidden" name="grades[]" value="<%= @stu_prof_cou_to_be_graded_id %>"> -->
-        <%= collection_select :"grades_hash[#{@stu_prof_cou_to_be_graded_id}]", :grade, [Grade.new(@stu_prof_cou_to_be_graded_id, "A+"), Grade.new(@stu_prof_cou_to_be_graded_id, "A"), Grade.new(@stu_prof_cou_to_be_graded_id, "A-"), Grade.new(@stu_prof_cou_to_be_graded_id, "B+"), Grade.new(@stu_prof_cou_to_be_graded_id, "B"), Grade.new(@stu_prof_cou_to_be_graded_id, "B-"), Grade.new(@stu_prof_cou_to_be_graded_id, "C+"),
-        Grade.new(@stu_prof_cou_to_be_graded_id, "C"), Grade.new(@stu_prof_cou_to_be_graded_id, "C-"), Grade.new(@stu_prof_cou_to_be_graded_id, "D+"), Grade.new(@stu_prof_cou_to_be_graded_id, "D"), Grade.new(@stu_prof_cou_to_be_graded_id, "F")], :grade, :grade %>
-        <!-- <select name="grades[]">
-          <option value="A+">A+</option>
-          <option value="A">A</option>
-          <option value="A-">A-</option>
-          <option value="B+">B+</option>
-        </select> -->
+        <% @grades = @letters.map do |letter|
+          Grade.new(@stu_prof_cou_to_be_graded.id, letter)
+        end %>
+
+        <%= collection_select :"grades_hash[#{@stu_prof_cou_to_be_graded.id}]", :grade, @grades, :grade, :grade, selected: "#{@stu_prof_cou_to_be_graded.grade}" %>
+
       </td>
     <% end %>
     </tr>
