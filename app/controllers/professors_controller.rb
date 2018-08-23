@@ -21,7 +21,11 @@ class ProfessorsController < ApplicationController
     end
 
     def grade
-      byebug
+      params[:grades_hash].each do |key, value|
+          StudentProfessorCourse.find(key).update(grade: value[:grade])
+      end
+      flash[:errors] = ["Grades successfully submitted."]
+      redirect_to professor_path(params[:id])
     end
 
     private

@@ -16,9 +16,17 @@
     Welcome back, Professor <%= @professor.full_name %>.
     <br/><br/>
 
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p class="text-success"><%=  error %></p>
+  <% end %>
+<% end %>
+<br/><br/>
 
 <% @professor.courses.each do |course| %>
     <li><a href="<%= "/professors/#{@professor.id}/#{course.id}" %>"><%= course.title %></a></li>
 <% end %>
 
 </div>
+
+<% flash.clear %>
