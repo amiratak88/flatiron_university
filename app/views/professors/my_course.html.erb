@@ -31,39 +31,43 @@
       </div>
   </div>
 </div>
+<% if @students.empty? %>
+  <h4 class="text-danger">No students are currently enrolled.</h4>
+  <a href="<%= professor_path(@professor_course.professor) %>" class="btn btn-primary btn-sm">Back</a>
+<% else %>
+  <%= form_tag "/professors/#{@professor_course.professor.id}/grade", method: "patch" do %>
 
-<%= form_tag "/professors/#{@professor_course.professor.id}/grade", method: "patch" do %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Student</th>
+        <th scope="col">Major</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each_with_index do |student, i| %>
+      <tr>
+        <th scope="row"><%= i + 1 %>
+        </th>
+        <% @stu_prof_cou_to_be_graded = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id) %>
+        <td><%= student.full_name %></td>
+        <td><%= student.major.title %></td>
+        <td>
+          <% @grades = @letters.map do |letter|
+            Grade.new(@stu_prof_cou_to_be_graded.id, letter)
+          end %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Student</th>
-      <th scope="col">Major</th>
-      <th scope="col">Grade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @students.each_with_index do |student, i| %>
-    <tr>
-      <th scope="row"><%= i + 1 %>
-      </th>
-      <% @stu_prof_cou_to_be_graded = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id) %>
-      <td><%= student.full_name %></td>
-      <td><%= student.major.title %></td>
-      <td>
-        <% @grades = @letters.map do |letter|
-          Grade.new(@stu_prof_cou_to_be_graded.id, letter)
-        end %>
+          <%= collection_select :"grades_hash[#{@stu_prof_cou_to_be_graded.id}]", :grade, @grades, :grade, :grade, selected: "#{@stu_prof_cou_to_be_graded.grade}" %>
 
-        <%= collection_select :"grades_hash[#{@stu_prof_cou_to_be_graded.id}]", :grade, @grades, :grade, :grade, selected: "#{@stu_prof_cou_to_be_graded.grade}" %>
-
-      </td>
-    <% end %>
-    </tr>
-      </tbody>
-</table>
-    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-      Submit
+        </td>
+      <% end %>
+      </tr>
+        </tbody>
+  </table>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        Submit
+      <% end %>
     <% end %>
 <% end %>
