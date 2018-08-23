@@ -21,6 +21,7 @@ div {
         <u>Course Title<br/></u></p>
         <p class="lead text-warning"><%= @professor_course.course.title %></p>
         <br/>
+        <p class="lead text-white">
         <u>Course Description<br/></u>
         <%= @professor_course.course.description %>
         <br/><br/>
@@ -47,8 +48,8 @@ div {
   </div>
 </div>
 <% if @students.empty? %>
-  <h4 class="text-danger">No students are currently enrolled.</h4>
-  <a href="<%= professor_path(@professor_course.professor) %>" class="btn btn-primary btn-sm">Back</a>
+  <h4 class="container-fluid text-danger">No students are currently enrolled.</h4><br/>
+  <a href="<%= professor_path(@professor_course.professor) %>" class="btn btn-muted btn-md">Back to Your Home Page</a>
 <% else %>
   <%= form_tag "/professors/#{@professor_course.professor.id}/grade", method: "patch" do %>
 
@@ -75,14 +76,13 @@ div {
           end %>
 
           <%= collection_select :"grades_hash[#{@stu_prof_cou_to_be_graded.id}]", :grade, @grades, :grade, :grade, selected: "#{@stu_prof_cou_to_be_graded.grade}" %>
-
         </td>
       <% end %>
       </tr>
         </tbody>
   </table>
   <div class="text-center">
-      <%= button_tag(type: "submit", class: "btn btn-primary text-center") do %>
+      <%= button_tag(type: "submit", class: "btn btn-primary btn-sm text-center") do %>
         Submit
       <% end %>
     </div>
