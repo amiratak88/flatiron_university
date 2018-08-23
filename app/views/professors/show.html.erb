@@ -32,7 +32,7 @@ div {
 <br/><br/>
 
 <% @professor.courses.each do |course| %>
-    <li><a href="<%= "/professors/#{@professor.id}/#{course.id}" %>"><%= course.title %></a></li>
+    <p class="lead"><a href="<%= "/professors/#{@professor.id}/#{course.id}" %>"><%= course.title %></a></p><br/><br/>
 <% end %>
 
 </div>

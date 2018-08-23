@@ -2,6 +2,9 @@ class StudentsController < ApplicationController
 
     before_action :authorized
 
+    def index
+    end
+    
     def my_track
       @student = Student.find(params[:id])
       @required_prof_courses = ProfessorCourse.select do |prof_cou|

@@ -1,6 +1,8 @@
 #Majors
-Major.create(title: "Film & Media", description: "Film & Media Description Coming SOon (or not) ")
-Major.create(title: "RANDOM MAJOR", description: "RANDOM MAJOR DESCRIPTION")
+Major.create(title: "Film & Media", description: "The Master of Arts in Film and Media provides an in-depth curriculum designed to develop skill sets required to succeed in the film, television, and media industries. Students are exposed to the latest technology, taught the most current financial and distribution strategies, and trained in advanced narrative techniques. The program emphasizes experiential learning and focuses on the latest trends and advances in the entertainment industry. All our courses balance practice with theory and are taught by successful artists and executives in the film, television and media world. Our program has been specifically designed to keep up with constant advances in technology, ideas and trends, both practical and aesthetic.")
+
+Major.create(title: "Geology", description: "The Geology program at Amirata University encompasses field, laboratory, and computational studies aimed at better understanding both geological processes and the rock record. This breadth of strengths spans sub-disciplines from sedimentary basin analysis and paleontology to large scale tectonics and crustal formation. The suggested curriculum below is for guidelines only; current or prospective students are invited to consult with any faculty members for further advice.")
+
 Major.create(title: "Government", description: "The graduate school of public policy offers you the opportunity to learn in an atmosphere of inquiry and open dialogue through a comprehensive range of degree and Executive Education programs. The HKS experience is a vibrant exchange of ideas and expertise, a give and take of energy and inspiration. Whether your goal is to earn a graduate degree or gain new skills and knowledge through an executive program, you will learn from our faculty of renowned scholars and seasoned practitioners while engaging with visiting luminaries, global thought leaders, and talented classmates.")
 
 
@@ -9,18 +11,14 @@ Course.create(title: "Sound on Film", description: "The final course in the soun
 
 #Government
 Course.create(title: "Comparative Politics and Policy", description: "This course provides the analytical knowledge and practical skills to understand comparative politics and policy worldwide.  It addresses a range of foundational topics:  (i) Concepts, theories, evidence, and methods in comparative politics; (ii) Classifying varieties of democratic and autocratic regimes, and processes of regime transition and consolidation; (iii) Institutional designs, including electoral systems, party systems, types of executives, and federalism; (iv) Channels of mass mobilization including through voting, protest activism, civil society organizations, media, civil disobedience, terrorism, and revolutionary upheavals; and (v) The performance of governance and public policies.  The course covers these issues by utilizing the methods and techniques of comparative politics. You will learn about polities worldwide – as well as thereby enriching and deepening your understanding of your own nation.")
+
 Course.create(title: "Advanced Microeconomic Analysis II", description: "This is the second semester of a rigorous two-semester sequence in advanced microeconomic analysis for MPA/ID students. Topics covered include general equilibrium, externalities and public goods, welfare economics, game theory, economics of information, incentives, and contracts. Theory is illustrated by relevant applications to international development and other areas.
 Prerequisites: Multivariate calculus and constrained optimization; intermediate microeconomics. This course is open to non-MPA/ID students only by permission of instructor. API-110 and API-112 cannot both be taken for credit. Students may receive credit for both API-110 and API-102 or API-303 only if API-102 or API-303 is taken first.")
 #Random
 Course.create(title: "Electrical Engineering", description: "ELECTRICAL")
 Course.create(title: "Mechanical Engineering", description: "YEAHHHHHHHHH")
-Course.create(title: "Civil Engineering", description: "We bi=uild stuff!")
-Course.create(title: "Two", description: "???")
-Course.create(title: "Three", description: "???")
-Course.create(title: "Four", description: "???")
-Course.create(title: "Five", description: "???")
-Course.create(title: "Six", description: "???")
-Course.create(title: "Seven", description: "???")
+Course.create(title: "Civil Engineering", description: "We build stuff!")
+
 
 #Students
 Student.create(first_name: "Amirata", last_name: "Khodaparast", gender: "M", ethnicity: "Iranian", dob: Date.new(1996, 10, 5), financial_aid: true, major_id: 1, username: "amirata", password: "khodaparast")

@@ -33,7 +33,8 @@ You're currently enrolled in the following courses:
 
 You still need to take <%= @student.required_courses_for_major.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.<br/>
 <br/>
-</div>
+</div><
+
 <% pro = (@student.required_courses_taken.length.to_f / @student.required_courses_for_major.length.to_f) * 100 %>
 
 <% spro = pro.to_i.to_s + "%" %>
