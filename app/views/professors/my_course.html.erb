@@ -18,12 +18,12 @@
         <p class="lead">
       <u>Schedule<br/></u>
       <%= @professor_course.start_date %> - <%= @professor_course.end_date %>
-      <%  @professor_course.sections.each do |section| %>
-      Day: <%= section.day %><br/>
+      <br/><br/>
+      <% @professor_course.sections.each do |section| %>
+      <%= section.day %>s<br/>
       From: <%= section.start_time %><br/>
       Through: <%= section.end_time %><br/><br/>
       <% end %>
-      <br/><br/>
       <u>Location</u><br/>
       <%= @professor_course.location %>
       <br/><br/>

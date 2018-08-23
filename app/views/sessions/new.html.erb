@@ -1,5 +1,14 @@
+<style>
+body {
+background: url('http://www.thisiscae.com/wp-content/uploads/2017/11/Oxford-University.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+</style>
+<br/><br/>
 <div class="container">
-  <h3 class="display-4">Log In</h3>
+  <h4 class="display-4">Sign In</h4>
   <br/>
   <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
@@ -12,10 +21,14 @@
 <%= form_tag '/login', method: :post do %>
 <div class="form-row">
   <div class="form-group col-md-6">
-<%= label_tag :username %><br/>
+<p class="text-white">
+  <%= label_tag :username %><br/>
+</p>
 <%= text_field_tag :username %>
     <br/><br/>
+    <p class="text-white">
   <%= label_tag :password %><br/>
+</p>
   <%= password_field_tag :password %><br/><br/>
 </div></div>
       <%= button_tag(type: "submit", class: "btn btn-primary") do %>
