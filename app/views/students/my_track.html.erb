@@ -1,5 +1,31 @@
 <div class="container-fluid">
 
+
+  <u><h3>Current Courses</h3></u>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Professor</th>
+        <th scope="col">Semester</th>
+        <th scope="col">Drop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @first_table = @student.student_professor_courses.reject do |stu_prof_cou| %>
+          <% stu_prof_cou.grade.empty? %>
+          <% end %>
+
+      <% @first_table.each do |stu_prof_cou| %>
+        <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></td>
+        <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></td>
+        <td><%= stu_prof_cou.professor_course.semester %></td>
+        <td><%= stu_prof_cou.grade %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <u><h3>Past Courses</h3></u>
 <table class="table table-hover">
   <thead>
@@ -12,7 +38,6 @@
   </thead>
   <tbody>
     <% @student.student_professor_courses.each do |stu_prof_cou| %>
-
     <tr>
       <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></td>
       <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></td>
@@ -26,19 +51,8 @@
 </div>
 
 
-<%# ############# LOGIC FOR 1ST TABLE ############## %> 
+<%# ############# LOGIC FOR 1ST TABLE ############## %>
 
-    <% @first_table = @student.student_professor_courses.reject do |stu_prof_cou|
-        stu_prof_cou.grade.empty?
-    end %>
 
-    <% @first_table.each do |stu_prof_cou| %>
-        <h6><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></h6>
-        <h6><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></h6>
-        <h6><%= stu_prof_cou.professor_course.semester %></h6>
-        <%# action placeholder: you can link the button to .... %>
-    <% end %>
 
-    
-<%# ############# LOGIC FOR 3rd TABLE ############## %> 
-
+<%# ############# LOGIC FOR 3rd TABLE ############## %>
