@@ -1,7 +1,9 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" >
-<a class="navbar-brand text-white" href="/login">Amirata<br/>University</a>
+
+<!-- The Logo is not working. Change to text??? -->
+<a class="navbar-brand" href="/login"><img src='/assets/images/logo.png'></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -11,9 +13,9 @@
   <li class="nav-item active">
     <a class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link text-white" href="#">Link</a>
-  </li>
+  </li> -->
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Curriculum
@@ -27,10 +29,9 @@
   </li>
 
     <%= form_tag logout_path, method: :delete do %>
-    <%= button_tag(type: "submit", class: "btn btn-primary-outline text-white nav-link", style: "background-color:transparent" ) do %>
-      Log Out
-    <% end %>
-      <!-- <%= link_to "Log Out", logout_path, class: 'nav-link text-white' %> -->
+      <%= button_tag(type: "submit", class: "btn btn-primary-outline text-white nav-link", style: "background-color:transparent" ) do %>
+        Log Out
+      <% end %>
     <% end %>
 </ul>
 </div>

@@ -59,7 +59,7 @@ Section.create(day: "Thursday", start_time: Time.now, end_time: Time.now, profes
 
 #StudentProfessorCourses
 StudentProfessorCourse.create(professor_course_id: 1, student_id: 1, grade: "A")
-StudentProfessorCourse.create(professor_course_id: 7, student_id: 1, grade: "F")
+StudentProfessorCourse.create(professor_course_id: 7, student_id: 1, grade: "")
 StudentProfessorCourse.create(professor_course_id: 8, student_id: 1, grade: "C-")
 StudentProfessorCourse.create(professor_course_id: 1, student_id: 2, grade: "B-")
 StudentProfessorCourse.create(professor_course_id: 7, student_id: 2, grade: "D")

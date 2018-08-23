@@ -42,9 +42,10 @@ class Student < ApplicationRecord
         when "F"
           gpa = 0.0
         end
-      end
+      end.compact
+      
       sum = total.inject(0) { |result, element| result + element }
-      sum.to_f/total.length
+        sum.to_f/total.length
     end
 
   def required_courses_for_major

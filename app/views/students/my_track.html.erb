@@ -1,58 +1,74 @@
+<head>
+<style>
+body {
+background-image: url("https://images.designtrends.com/wp-content/uploads/2015/11/30152626/Solid-Dark-Navy-Blue-Wallpaper2.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+div {
+  padding-left: 15px;
+}
+</style>
+</head>
+
+<br/><br/>
+
 <div class="container-fluid">
 
+<h2 class="text-white"> <%= @student.first_name %>'s Major Track</h2>
+<% @first_table, @third_table = @student.student_professor_courses.partition do |stu_prof_cou|
+    stu_prof_cou.grade.empty?
+end %>
+<br/><br/>
 
-  <u><h3>Current Courses</h3></u>
+  <h3 class="text-info">Current Courses</h3>
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Professor</th>
-        <th scope="col">Semester</th>
-        <th scope="col">Drop</th>
+        <th scope="col" class="text-white">Title</th>
+        <th scope="col" class="text-white">Professor</th>
+        <th scope="col" class="text-white">Semester</th>
+        <th scope="col" class="text-white">Drop</th>
       </tr>
     </thead>
     <tbody>
-      <% @first_table = @student.student_professor_courses.reject do |stu_prof_cou| %>
-          <% stu_prof_cou.grade.empty? %>
-          <% end %>
 
       <% @first_table.each do |stu_prof_cou| %>
-        <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></td>
-        <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></td>
-        <td><%= stu_prof_cou.professor_course.semester %></td>
-        <td><%= stu_prof_cou.grade %></td>
+        <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
+        <td><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
+        <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
+        <td class="text-white"><%= form_tag student_path, method: :post do %>
+          <%= button_tag(type: "submit", class: "btn btn-primary-outline text-warning", style: "background-color:transparent") do %>Drop Course<% end %>
+        <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
 
-<u><h3>Past Courses</h3></u>
+<br/>
+
+<h3 class="text-info">Past Courses</h3>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Professor</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Grade</th>
+      <th scope="col" class="text-white">Title</th>
+      <th scope="col" class="text-white">Professor</th>
+      <th scope="col" class="text-white">Semester</th>
+      <th scope="col" class="text-white">Grade</th>
     </tr>
   </thead>
   <tbody>
-    <% @student.student_professor_courses.each do |stu_prof_cou| %>
+    <% @third_table.each do |stu_prof_cou| %>
     <tr>
-      <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></td>
-      <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></td>
-      <td><%= stu_prof_cou.professor_course.semester %></td>
-      <td><%= stu_prof_cou.grade %></td>
+      <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
+      <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
+      <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
+      <td class="text-white"><%= stu_prof_cou.grade %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
 </div>
-
-
-<%# ############# LOGIC FOR 1ST TABLE ############## %>
-
-
-
-<%# ############# LOGIC FOR 3rd TABLE ############## %>
