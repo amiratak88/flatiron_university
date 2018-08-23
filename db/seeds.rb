@@ -28,6 +28,7 @@ Student.create(first_name: "Roberto", last_name: "Buso-Garcia", gender: "M", eth
 Student.create(first_name: "John", last_name: "Doe", gender: "F", ethnicity: "Caucasian", dob: Date.new(1990, 10, 10), financial_aid: true, major_id: 3, username: "john", password: "doe")
 Student.create(first_name: "Taura", last_name: "Musgrove", gender: "F", ethnicity: "Black", dob: Date.new(1998, 2, 5), financial_aid: true, major_id: 1, username: "taura", password: "musgrove")
 Student.create(first_name: "Barbara", last_name: "Asare", gender: "F", ethnicity: "Black", dob: Date.new(1962, 3, 9), financial_aid: false, major_id: 1, username: "barbara", password: "asare")
+Student.create(first_name: "Rosa", last_name: "Tu", gender: "F", ethnicity: "Asian-American", dob: Date.new(1990, 3, 9), financial_aid: true, major_id: 1, username: "rosa", password: "tu")
 
 #Professors
 Professor.create(first_name: "Glenfield", last_name: "Payne", gender: "M", ethnicity: "Black", dob: Date.new(1965, 8, 10), username: "prof1", password: "prof1")
@@ -66,6 +67,12 @@ StudentProfessorCourse.create(professor_course_id: 7, student_id: 2, grade: "D")
 StudentProfessorCourse.create(professor_course_id: 1, student_id: 3, grade: "A+")
 StudentProfessorCourse.create(professor_course_id: 8, student_id: 3, grade: "B-")
 StudentProfessorCourse.create(professor_course_id: 8, student_id: 4, grade: "D")
+StudentProfessorCourse.create(professor_course_id: 1, student_id: 6, grade: "A+")
+StudentProfessorCourse.create(professor_course_id: 2, student_id: 6, grade: "B-")
+StudentProfessorCourse.create(professor_course_id: 8, student_id: 6, grade: "")
+StudentProfessorCourse.create(professor_course_id: 4, student_id: 6, grade: "A+")
+StudentProfessorCourse.create(professor_course_id: 5, student_id: 6, grade: "")
+
 
 #Requirements
 Requirement.create(major_id: 1, course_id: 1)
