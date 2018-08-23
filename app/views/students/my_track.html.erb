@@ -63,7 +63,7 @@ end %>
     <% @third_table.each do |stu_prof_cou| %>
     <tr>
       <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
-      <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
+      <td><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
       <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
       <td class="text-white"><%= stu_prof_cou.grade %></td>
     </tr>
