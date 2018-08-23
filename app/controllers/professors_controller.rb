@@ -6,6 +6,9 @@ class ProfessorsController < ApplicationController
         set_professor
     end
 
+    def index
+    end
+
     def my_students
         set_professor
         render :students

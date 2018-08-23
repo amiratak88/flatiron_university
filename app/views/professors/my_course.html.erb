@@ -1,12 +1,26 @@
+<head>
+<style>
+body {
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2O0OL6PgAAxdWqeqOVcqltENgV2fD4pJFw-IDjQ2vjBxrmv4_");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+div {
+  padding-left: 15px;
+}
+</style>
+</head>
+</div>
 
 <br/>
-<div class="container-fluid">
+<div class="container-fluid text-white">
   <div class="row">
     <div class="col-lg-6">
       <p class="lead">
-        <u>Course Title<br/></u>
-        <%= @professor_course.course.title %>
-        <br/><br/>
+        <u>Course Title<br/></u></p>
+        <p class="lead text-warning"><%= @professor_course.course.title %></p>
+        <br/>
         <u>Course Description<br/></u>
         <%= @professor_course.course.description %>
         <br/><br/>
@@ -16,7 +30,7 @@
       </p>
       </div>
     <div class="col-lg-6">
-        <p class="lead">
+        <p class="lead text-right">
       <u>Schedule<br/></u>
       <%= @professor_course.start_date %> - <%= @professor_course.end_date %>
       <br/><br/>
@@ -38,7 +52,7 @@
 <% else %>
   <%= form_tag "/professors/#{@professor_course.professor.id}/grade", method: "patch" do %>
 
-  <table class="table table-striped">
+  <table class="table table-striped text-warning">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -53,9 +67,9 @@
         <th scope="row"><%= i + 1 %>
         </th>
         <% @stu_prof_cou_to_be_graded = StudentProfessorCourse.find_by(student_id: student.id, professor_course_id: @professor_course.id) %>
-        <td><%= student.full_name %></td>
-        <td><%= student.major.title %></td>
-        <td>
+        <td class="text-white"><%= student.full_name %></td>
+        <td class="text-white"><%= student.major.title %></td>
+        <td class="text-white">
           <% @grades = @letters.map do |letter|
             Grade.new(@stu_prof_cou_to_be_graded.id, letter)
           end %>
@@ -67,8 +81,10 @@
       </tr>
         </tbody>
   </table>
-      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+  <div class="text-center">
+      <%= button_tag(type: "submit", class: "btn btn-primary text-center") do %>
         Submit
       <% end %>
+    </div>
     <% end %>
 <% end %>

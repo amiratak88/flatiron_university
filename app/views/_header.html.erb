@@ -3,19 +3,33 @@
 <nav class="navbar navbar-expand-lg navbar-light" >
 
 <!-- The Logo is not working. Change to text??? -->
-<a class="navbar-brand" href="/login"><img src='/assets/images/logo.png'></a>
+<a class="navbar-brand text-white" href="/login">AMIRATA University</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto">
-  <li class="nav-item active">
-    <a class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
+
+  <% if session[:user_id] && session[:position] == "student" %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link text-white" href="/students/<%= params[:id] %>">Home<span class="sr-only">(current)</span></a>
+    </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_courses">My Courses</a>
   </li>
-  <!-- <li class="nav-item">
-    <a class="nav-link text-white" href="#">Link</a>
-  </li> -->
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_track">My Major Track</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_grades">My Grades</a>
+  </li>
+<% elsif session[:user_id] && session[:position] == "professor" %>
+<li class="nav-item">
+  <a class="nav-link text-white" href="/professors/<%= params[:id] %>">My Courses</a>
+</li>
+  <% end %>
+
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Curriculum
