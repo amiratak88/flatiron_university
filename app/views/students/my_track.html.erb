@@ -1,73 +1,6 @@
-<% @student.student_professor_courses.each do |stu_prof_cou| %>
-    <h6><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></h6>
-    <h6><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></h6>
-    <h6><%= stu_prof_cou.professor_course.semester %></h6>
-    <h6><%= stu_prof_cou.grade %></h6>
-<% end %>
-
-
 <div class="container-fluid">
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Professor</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Drop</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Comparative Politics and Policy</td>
-      <td>Roberto Busó-García</td>
-      <td>Spring</td>
-      <td>F</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<br/>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Professor</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Add</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Comparative Politics and Policy</td>
-      <td>Roberto Busó-García</td>
-      <td>Spring</td>
-      <td>F</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<br/>
-
+<u><h3>Past Courses</h3></u>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -78,21 +11,15 @@
     </tr>
   </thead>
   <tbody>
+    <% @student.student_professor_courses.each do |stu_prof_cou| %>
+
     <tr>
-      <td>Comparative Politics and Policy</td>
-      <td>Roberto Busó-García</td>
-      <td>Spring</td>
-      <td>F</td>
+      <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></td>
+      <td><%=  link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor) %></td>
+      <td><%= stu_prof_cou.professor_course.semester %></td>
+      <td><%= stu_prof_cou.grade %></td>
     </tr>
-    <tr>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
 
