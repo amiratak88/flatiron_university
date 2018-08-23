@@ -27,7 +27,10 @@
   </li>
 
     <%= form_tag logout_path, method: :delete do %>
-      <%= link_to "Log Out", logout_path, class: 'nav-link text-white' %>
+    <%= button_tag(type: "submit", class: "btn btn-primary-outline text-white nav-link", style: "background-color:transparent" ) do %>
+      Log Out
+    <% end %>
+      <!-- <%= link_to "Log Out", logout_path, class: 'nav-link text-white' %> -->
     <% end %>
 </ul>
 </div>
