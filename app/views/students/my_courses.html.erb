@@ -16,13 +16,13 @@ div {
 
 <div class="container-fluid">
 
-<h2 class="text-white"> <%= @student.first_name %>'s Courses</h2>
+<h3 class="text-white"> <%= @student.first_name %>'s Courses</h3>
 <% @first_table, @second_table = @student.student_professor_courses.partition do |stu_prof_cou|
     stu_prof_cou.grade.empty?
 end %>
 <br/><br/>
 
-  <h3 class="text-info">Current Courses</h3>
+  <h4 class="text-info">Current Courses</h4>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -48,7 +48,7 @@ end %>
 
 <br/>
 
-<h3 class="text-info">Past Courses</h3>
+<h4 class="text-info">Past Courses</h4>
 <table class="table table-hover">
   <thead>
     <tr>

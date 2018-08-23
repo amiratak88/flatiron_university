@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   ########### PROFESSORS ###############
 
   get '/professors/:id/:course_id', to: 'professors#my_course', as: 'my_course'
+  get '/professors/:id/bio', to: 'professors#bio', as: 'prof_bio'
 
   ############## STUDENTS ###############
 
