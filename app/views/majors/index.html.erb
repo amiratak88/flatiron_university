@@ -6,18 +6,16 @@ background-size: cover;
 background-position: center;
 background-attachment: fixed;
 }
-
-div {
-  padding-left: 15px;
-}
 </style>
 </head>
 
 <body>
   <div class="container-fluid">
     <br/><br/>
-
-<h3 class="text-warning"><%= @course.title %></h3><br/>
-<h5 class="text-white"><%= @course.description %></h5>
+    <h2 class="text-warning text-center">Majors</h2>
+    <br/><br/>
+<% @majors.each do |major| %>
+    <h5 class="text-center"><%= link_to major.title, major_path(major) %></h5><br/>
+<% end %>
 </div>
 </body>
