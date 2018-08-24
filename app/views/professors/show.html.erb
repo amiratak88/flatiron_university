@@ -31,7 +31,9 @@ div {
 <h4 class="text-white">These are your current courses: </h4>
 <br/><br/>
 
-<% @professor.courses.each do |course| %>
+<% @professor.courses.sort_by do |cou|
+  cou.title
+end.each do |course| %>
     <p class="lead"><a href="<%= "/professors/#{@professor.id}/#{course.id}" %>"><%= course.title %></a></p><br/><br/>
 <% end %>
 
