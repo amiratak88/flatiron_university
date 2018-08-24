@@ -27,19 +27,16 @@ background-attachment: fixed;
     <br/>
 <%= form_tag '/login', method: :post do %>
 <div class="form-row">
-  <div class="form-group col-md-6">
-<p>
+  <div class="form-group col-md-6 text-white">
   <%= label_tag :username %><br/>
-</p>
 <%= text_field_tag :username %>
-    <br/><br/>
-    <p class="text-white">
+    <br/>
+    <p class="text-white"><br/>
   <%= label_tag :password %><br/>
-</p>
-  <%= password_field_tag :password %><br/><br/>
+  <%= password_field_tag :password %><br/>
 </div></div>
       <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-        Submit
+        Sign In
       <% end %>
       <% end %>
     </div>

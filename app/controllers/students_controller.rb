@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
     def my_track
       @student = Student.find(params[:id])
       @required_prof_courses = ProfessorCourse.select do |prof_cou|
-        prof_cou.course.majors.include?(@student.major)
+        prof_cou.course.majors.include?(@student.major) && !prof_cou.student_professor_courses.map(&:student).include?(@student)
       end
       render :my_track
     end
@@ -23,8 +23,8 @@ class StudentsController < ApplicationController
     end
 
     def add_course
-      StudentProfessorCourse.create(student_id: , professor_course_id: 
-      redirect_to 
+      StudentProfessorCourse.create(student_id: params[:id], professor_course_id: params[:professor_course_id], grade: "")
+      redirect_to my_track_path(params[:id])
     end
 
     def authorized

@@ -13,8 +13,19 @@ div {
 </head>
 
 <div class="container-fluid">
+
 <br/>
-<h2 class="text-white"> <%= @student.first_name %>'s Major Track</h2>
+<h3 class="text-white"> <%= @student.first_name %>'s Major Track</h3><br/>
+<p class="lead text-white">You still need to take <%= @student.required_courses_for_major.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.
+
+<% pro = (@student.required_courses_taken.length.to_f / @student.required_courses_for_major.length.to_f) * 100 %>
+
+<% spro = pro.to_i.to_s + "%" %>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= spro %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+You are <%= pro.to_i %>% there!
+</div>
+</div>
 <% @first_table, @third_table = @student.student_professor_courses.select do |stu_prof_cou|
     stu_prof_cou.professor_course.course.majors.include?(stu_prof_cou.student.major)
 end.partition do |stu_prof_cou|
@@ -22,33 +33,61 @@ end.partition do |stu_prof_cou|
 end %>
 <br/><br/>
 
-  <h3 class="text-info">Current Courses</h3>
+  <h4 class="text-info">Current Courses</h4>
   <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col" class="text-white">Title</th>
         <th scope="col" class="text-white">Professor</th>
         <th scope="col" class="text-white">Semester</th>
-        <th scope="col" class="text-white">Drop</th>
+        <th scope="col" class="text-white"></th>
       </tr>
     </thead>
     <tbody>
-    <tr>
+    
       <% @first_table.each do |stu_prof_cou| %>
+        <tr>
             <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
             <td><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
             <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
             <td class="text-white">
                 <%= link_to "Drop Course", "/student_professor_courses/#{stu_prof_cou.id}/drop_from_my_track", method: "delete", class: "btn btn-primary-outline text-warning", style: "background-color:transparent" %>
             </td>
+        </tr>
         <% end %>
-      </tr>
+      
     </tbody>
   </table>
 
-<br/>
 
-<h3 class="text-info">Past Courses</h3>
+<br/>
+<h4 class="text-info">Courses Still Available to Complete Your Degree</h4>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col" class="text-white">Title</th>
+      <th scope="col" class="text-white">Professor</th>
+      <th scope="col" class="text-white">Semester</th>
+      <td class="text-white">
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @required_prof_courses.each do |prof_cou| %>
+    <tr>
+      <td><%= link_to prof_cou.course.title, course_path(prof_cou.course), class: 'text-warning' %></td>
+      <td><%= link_to prof_cou.professor.full_name, prof_bio_path(prof_cou.professor), class: 'text-warning' %></td>
+      <td class="text-white"><%= prof_cou.semester %></td>
+      <td class="text-white">
+        <%= link_to "Add Course", add_course_path(params[:id], professor_course_id: prof_cou.id), method: "post" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h4 class="text-info">Past Courses</h4>
 <table class="table table-hover">
   <thead>
     <tr>
