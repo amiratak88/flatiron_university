@@ -14,7 +14,7 @@ div {
 
 <br/>
 <div class="container-fluid">
-  <h4 class="text-warning">Welcome back, <%= @student.full_name %>!</h4>
+  <h4 class="text-warning text-center">Welcome back, <%= @student.full_name %>!</h4>
 <br/>
 <div class="lead text-white">
 <% major = @student.major %>
@@ -31,8 +31,10 @@ You're currently enrolled in the following courses:
 <br/>
 <% end %>
 
-You still need to take <%= @student.required_courses_for_major.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.<br/>
+<div class="text-center">
+  You still need to take <%= @student.required_courses_for_major.length - @student.required_courses_taken.length %> courses to fulfill your Major's requirements.<br/>
 <br/>
+</div>
 </div>
 
 <% pro = (@student.required_courses_taken.length.to_f / @student.required_courses_for_major.length.to_f) * 100 %>

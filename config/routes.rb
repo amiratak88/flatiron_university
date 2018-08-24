@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/courses/prof_index', to: 'courses#prof_index', as: 'prof_index'
+
+
   resources :majors
   resources :requirements
   resources :professor_courses
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   resources :professors
   resources :students
   resources :courses
+  resources :admins
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
@@ -15,7 +20,7 @@ Rails.application.routes.draw do
   ########### PROFESSORS ###############
 
   get '/professors/:id/:course_id', to: 'professors#my_course', as: 'my_course'
-  get '/professors/:id/bio', to: 'professors#bio', as: 'prof_bio'
+  get '/courses/:professor_id/bio', to: 'courses#bio', as: 'prof_bio'
 
   ############## STUDENTS ###############
 
@@ -30,6 +35,10 @@ Rails.application.routes.draw do
   delete 'student_professor_courses/:id/drop_from_my_courses', to: 'student_professor_courses#drop_from_my_courses'
 
   post 'students/:id/add_course', to: 'students#add_course', as: "add_course"
+
+#####################ADMIN###########################
+
+get 'admins/reports', to: 'admins#reports', as: 'reports'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

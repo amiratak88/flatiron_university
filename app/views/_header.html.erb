@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" >
 
 <!-- The Logo is not working. Change to text??? -->
-<a class="navbar-brand text-white" href="/login">AMIRATA University</a>
+<a class="navbar-brand text-white" href="/login">Amirata University</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -23,10 +23,7 @@
     <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_courses">My Courses</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_track">My Major Track</a>
-<li class="nav-item">
-  <a class="nav-link text-white" href="/professors/<%= params[:id] %>">My Courses</a>
-</li>
+    <a class="nav-link text-white" href="/students/<%= params[:id] %>/my_track">Major Requirements</a>
   <% end %>
 
   <li class="nav-item dropdown">
@@ -37,7 +34,7 @@
       <a class="dropdown-item" href="/majors">Majors</a>
       <a class="dropdown-item" href="/courses">Courses</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/professors">Professors</a>
+      <a class="dropdown-item" href="/courses/prof_index">Faculty</a>
     </div>
   </li>
 

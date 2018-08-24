@@ -68,6 +68,9 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    chart-js-rails (0.1.6)
+      railties (> 3.1)
+    chartkick (3.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -217,6 +220,8 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.2)
   byebug
   capybara (>= 2.15)
+  chart-js-rails
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   font-awesome-sass

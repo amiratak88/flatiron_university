@@ -1,17 +1,12 @@
 class ProfessorsController < ApplicationController
 
-    before_action :authorized, except: :bio
+    before_action :authorized
 
     def show
         set_professor
     end
 
     def index
-    end
-
-    def bio
-      set_professor
-      render :bio
     end
 
     def my_students

@@ -48,7 +48,7 @@ end %>
       <% @first_table.each do |stu_prof_cou| %>
         <tr>
             <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
-            <td><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
+            <td><%= link_to stu_prof_cou.professor_course.professor.full_name, prof_bio_path(stu_prof_cou.professor_course.professor.id), class: 'text-warning' %></td>
             <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
             <td class="text-white">
                 <%= link_to "Drop Course", "/student_professor_courses/#{stu_prof_cou.id}/drop_from_my_track", method: "delete", class: "btn btn-primary-outline text-warning", style: "background-color:transparent" %>
@@ -76,7 +76,7 @@ end %>
     <% @required_prof_courses.each do |prof_cou| %>
     <tr>
       <td><%= link_to prof_cou.course.title, course_path(prof_cou.course), class: 'text-warning' %></td>
-      <td><%= link_to prof_cou.professor.full_name, prof_bio_path(prof_cou.professor), class: 'text-warning' %></td>
+      <td><%= link_to prof_cou.professor.full_name, prof_bio_path(prof_cou.professor.id), class: 'text-warning' %></td>
       <td class="text-white"><%= prof_cou.semester %></td>
       <td class="text-white">
         <%= link_to "Add Course", add_course_path(params[:id], professor_course_id: prof_cou.id), method: "post" %>
@@ -101,7 +101,7 @@ end %>
     <% @third_table.each do |stu_prof_cou| %>
     <tr>
       <td><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course), class: 'text-warning' %></td>
-      <td><%= link_to stu_prof_cou.professor_course.professor.full_name, professor_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
+      <td><%= link_to stu_prof_cou.professor_course.professor.full_name, prof_bio_path(stu_prof_cou.professor_course.professor), class: 'text-warning' %></td>
       <td class="text-white"><%= stu_prof_cou.professor_course.semester %></td>
       <td class="text-white"><%= stu_prof_cou.grade %></td>
     </tr>

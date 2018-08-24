@@ -12,12 +12,10 @@ background-attachment: fixed;
 <body>
   <div class="container-fluid">
     <br/><br/>
-    <h2 class="text-warning text-center">Majors</h2>
+    <h2 class="text-warning text-center">Faculty</h2>
     <br/><br/>
-<% @majors.each do |major| %>
-    <h5 class="text-center"><%= link_to major.title, major_path(major) %></h5><br/>
+<% @professors.each do |professor| %>
+    <h5 class="text-center"><%= link_to professor.full_name, prof_bio_path(professor) %></h5><br/>
 <% end %>
 </div>
 </body>
-
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>

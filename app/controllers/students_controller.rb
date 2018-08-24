@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
     def index
     end
-    
+
     def my_track
       @student = Student.find(params[:id])
       @required_prof_courses = ProfessorCourse.select do |prof_cou|
@@ -25,6 +25,12 @@ class StudentsController < ApplicationController
     def add_course
       StudentProfessorCourse.create(student_id: params[:id], professor_course_id: params[:professor_course_id], grade: "")
       redirect_to my_track_path(params[:id])
+
+    end
+    
+    def bio
+      @professor = Professor.find(params[:id])
+      render "/professors/#{@professor.id}/bio"
     end
 
     def authorized
