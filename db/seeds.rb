@@ -1,94 +1,159 @@
-#Majors
-Major.create(title: "Film & Media", description: "The Master of Arts in Film and Media provides an in-depth curriculum designed to develop skill sets required to succeed in the film, television, and media industries. Students are exposed to the latest technology, taught the most current financial and distribution strategies, and trained in advanced narrative techniques. The program emphasizes experiential learning and focuses on the latest trends and advances in the entertainment industry. All our courses balance practice with theory and are taught by successful artists and executives in the film, television and media world. Our program has been specifically designed to keep up with constant advances in technology, ideas and trends, both practical and aesthetic.")
+##################### Majors #########################
 
-Major.create(title: "Geology", description: "The Geology program at Amirata University encompasses field, laboratory, and computational studies aimed at better understanding both geological processes and the rock record. This breadth of strengths spans sub-disciplines from sedimentary basin analysis and paleontology to large scale tectonics and crustal formation. The suggested curriculum below is for guidelines only; current or prospective students are invited to consult with any faculty members for further advice.")
+Major.create(title: "Accounting", description: "This curriculum prepares students for transfer to four-year institutions where they may complete the requirements for a Bachelor's degree with a major in accounting. The program enables the student to partially fulfill the educational requirements for the New York Certified Accounting examination.")
 
-Major.create(title: "Government", description: "The graduate school of public policy offers you the opportunity to learn in an atmosphere of inquiry and open dialogue through a comprehensive range of degree and Executive Education programs. The HKS experience is a vibrant exchange of ideas and expertise, a give and take of energy and inspiration. Whether your goal is to earn a graduate degree or gain new skills and knowledge through an executive program, you will learn from our faculty of renowned scholars and seasoned practitioners while engaging with visiting luminaries, global thought leaders, and talented classmates.")
+Major.create(title: "Art", description: "Art is a diverse range of human activities in creating visual, auditory or performing artifacts (artworks), expressing the author's imaginative, conceptual idea, or technical skill, intended to be appreciated for their beauty or emotional power. In their most general form these activities include the production of works of art, the criticism of art, the study of the history of art, and the aesthetic dissemination of art.")
 
+Major.create(title: "Biology", description: "Biology is the natural science that studies life and living organisms, including their physical structure, chemical processes, molecular interactions, physiological mechanisms, development and evolution. Despite the complexity of the science, there are certain unifying concepts that consolidate it into a single, coherent field. Biology recognizes the cell as the basic unit of life, genes as the basic unit of heredity, and evolution as the engine that propels the creation and extinction of species. Living organisms are open systems that survive by transforming energy and decreasing their local entropy to maintain a stable and vital condition defined as homeostasis")
 
-#Film Courses
-Course.create(title: "Sound on Film", description: "The final course in the sound concentration sequence, this course is focused on composing and sound designing a longer-form capstone work in collaboration with a filmmaker also in the MA program. Final grade is based on the quality of the finished product and an evaluation by the instructor of how the student incorporated knowledge and techniques introduced in the previous three classes.")
+Major.create(title: "Computer Science", description: "This program leads to the Associate in Science (A.S.) degree and is designed for those who intend to transfer to a baccalaureate program oriented in the design of hardware and software of computer systems. The program stresses computer, mathematics, and science courses which are appropriate for transfer to a baccalaureate program.")
 
-#Government
-Course.create(title: "Comparative Politics and Policy", description: "This course provides the analytical knowledge and practical skills to understand comparative politics and policy worldwide.  It addresses a range of foundational topics:  (i) Concepts, theories, evidence, and methods in comparative politics; (ii) Classifying varieties of democratic and autocratic regimes, and processes of regime transition and consolidation; (iii) Institutional designs, including electoral systems, party systems, types of executives, and federalism; (iv) Channels of mass mobilization including through voting, protest activism, civil society organizations, media, civil disobedience, terrorism, and revolutionary upheavals; and (v) The performance of governance and public policies.  The course covers these issues by utilizing the methods and techniques of comparative politics. You will learn about polities worldwide – as well as thereby enriching and deepening your understanding of your own nation.")
+Major.create(title: "Creative Writing", description: "The A. A. in Creative Writing provides students with knowledge and skills that will prepare them for a career in writing.  The curriculum is also appropriate for students continuing onto a four-year institution where they may complete a Bachelor’s degree with a major in Creative Writing.")
 
-Course.create(title: "Advanced Microeconomic Analysis II", description: "This is the second semester of a rigorous two-semester sequence in advanced microeconomic analysis for MPA/ID students. Topics covered include general equilibrium, externalities and public goods, welfare economics, game theory, economics of information, incentives, and contracts. Theory is illustrated by relevant applications to international development and other areas.
-Prerequisites: Multivariate calculus and constrained optimization; intermediate microeconomics. This course is open to non-MPA/ID students only by permission of instructor. API-110 and API-112 cannot both be taken for credit. Students may receive credit for both API-110 and API-102 or API-303 only if API-102 or API-303 is taken first.")
-#Random
-Course.create(title: "Electrical Engineering", description: "ELECTRICAL")
-Course.create(title: "Mechanical Engineering", description: "YEAHHHHHHHHH")
-Course.create(title: "Civil Engineering", description: "We build stuff!")
+######################### Courses ##########################
 
+######################### 1 - 5 #####################
 
-#Students
-Student.create(first_name: "Amirata", last_name: "Khodaparast", gender: "M", race: "Iranian", dob: Date.new(1996, 10, 5), financial_aid: true, major_id: 1, username: "amirata", password: "khodaparast")
-Student.create(first_name: "Roberto", last_name: "Buso-Garcia", gender: "M", race: "Latinx", dob: Date.new(1972, 5, 11), financial_aid: false, major_id: 2, username: "roberto", password: "buso-garcia")
-Student.create(first_name: "John", last_name: "Doe", gender: "F", race: "Caucasian", dob: Date.new(1990, 10, 10), financial_aid: true, major_id: 3, username: "john", password: "doe")
-Student.create(first_name: "Taura", last_name: "Musgrove", gender: "F", race: "Black", dob: Date.new(1998, 2, 5), financial_aid: true, major_id: 1, username: "taura", password: "musgrove")
-Student.create(first_name: "Barbara", last_name: "Asare", gender: "F", race: "Black", dob: Date.new(1962, 3, 9), financial_aid: false, major_id: 1, username: "barbara", password: "asare")
-Student.create(first_name: "Rosa", last_name: "Tu", gender: "F", race: "Asian-American", dob: Date.new(1990, 3, 9), financial_aid: true, major_id: 1, username: "rosa", password: "tu")
-Student.create(first_name: "Scarlett", last_name: "Perry", gender: "F", race: "Latinx", dob: Date.new(1997, 10, 5), financial_aid: false, major_id: 1, username: "scarlett", password: "perry")
+Course.create(title: "Composition I", description: "This course prepares students to produce clear, well-developed, well-organized, grammatically correct writing. The curriculum is designed to give students guided practice in drafting, revising, and editing essays. The course is also designed to develop the skills that enable students to interpret and analyze published texts. In addition to readings assigned in class, students respond to texts they locate themselves through research and write at least one documented or research essay. Students who have completed ENG 100 will not receive credit for ENG 101. SUNY GEN ED-GBCM; NCC GEN ED-COMP Offered: Fall, Winterim, Spring, Summer")
 
-#Professors
-Professor.create(first_name: "Glenfield", last_name: "Payne", gender: "M", ethnicity: "Black", dob: Date.new(1965, 8, 10), username: "prof1", password: "prof1", bio: "Glenfield Payne has been working in the film industry for over 25 years. He was the Supervising Sound Editor for three Academy Award nominated films, “4 Little Girls”, “Trouble the Water”, & “The Cove”, which won an Oscar for best documentary. Glen also received an Emmy nomination for his work on “4 Little Girls” and a Motion Picture Sound Editor’s Golden Reel nomination for “Marco Polo”. He has worked with acclaimed directors such as Spike Lee, Joel & Ethan Coen, Martin Scorsese, Woody Allen, Lee Daniels, Wes Anderson, and Julie Taymor, among others.")
-Professor.create(first_name: "Jie" , last_name: "Bai", gender: "F", ethnicity: "Asian" , dob: Date.new(1980, 11, 30), username: "prof2", password: "prof2", bio: "My research focuses on microeconomic issues of firms in developing countries and emerging markets. My recent projects have examined firms’ incentive and ability to build a reputation for quality, the relationship between economic growth and corruption, and the impact of internal trade barriers among Chinese provinces on resource misallocation, firm performance and export activities. Other ongoing work includes studying firms’ quality upgrading dynamics and reputational forces in export markets. I received my Ph.D. in Economics from MIT in June 2016 and spent one year at Microsoft Research NE prior to joining Harvard Kennedy School.")
-Professor.create(first_name: "Pippa", last_name: "Norris", gender: "F", ethnicity: "Caucasian", dob: Date.new(1939, 1, 1), username: "prof3", password: "prof3", bio: "Pippa Norris is the Paul F. McGuire Lecturer in Comparative Politics at the John F. Kennedy School of Government, Harvard University, ARC Laureate Fellow and Professor of Government and International Relations at the University of Sydney, and Director of the Electoral Integrity Project. An Anglo-American political scientist and public speaker, her research compares election and public opinion, political communications, and gender politics around the world. New books in 2017-18 focus on Strengthening Electoral Integrity (2017 Cambridge), Election Watchdogs (ed. 2017 Oxford), Why American Elections are Flawed (2017 Cornell), Cultural Backlash: Trump, Brexit and Authoritarian-Populism (2018 Cambridge, with Ronald Inglehart) and Electoral Integrity in America (ed. 2018 Oxford University Press).")
-Professor.create(first_name: "Eileen", last_name: "Rodriguez", gender: "F", ethnicity: "Latinx", dob: Date.new(1979, 10, 1), username: "prof4", password: "prof4", bio: "After graduating from Georgetown University Law Center, Eileen decided to pursue her passion for film.  In 2004, she began her career with Miramax before joining The Weinstein Company in 2005. As part of the acquisitions team, Eileen divided her time between creative and legal/business affairs roles – providing her with a unique insight into not only the creative choices which inform a potential film acquisition, but also the business and legal considerations.  During her time with The Weinstein Company, she drafted and negotiated over 130 acquisition agreements and oversaw The Latin American Film Company – a multi-million dollar film fund focused on financing and distributing Latin American films in the United States. In 2011, Eileen took a position with Tribeca Enterprises LLC, where she is currently a Vice President of Legal and Business Affairs.  Eileen leads the legal and business affairs process for all Tribeca Film acquisitions, and has drafted and negotiated over 90 acquisition agreements including Palo Alto (directed by Gia Coppola) and Broken Circle Breakdown, the Academy Award Best Foreign Language Film Nominee directed by Felix Van Groeningen.")
-Professor.create(first_name: "Robin", last_name: "Epstein", gender: "F", ethnicity: "Caucasian", dob: Date.new(1971, 1, 10), username: "prof5", password: "prof5", bio: "Robin Epstein began her career doing stand-up comedy in New York City. While the crowds were often small, she got the attention of Al Franken who asked her to work with him on his book, “Why Not Me?” and on his NBC sitcom, “Lateline.” She went on write for two seasons on Joan Cusack’s ABC show, “What About Joan,” where she worked under James L. Brooks. Robin also served as head writer for the teen girl game show on Oxygen, “Clued In.” She’s been the lead writer on 4 produced video games including Atari’s Tycoon City: New York, as well as games for Activision and OMGPop.")
-Professor.create(first_name: "Jeremy", last_name: "Pikser", gender: "M", ethnicity: "Caucasian", dob: Date.new(1945, 10, 10), username: "prof6", password: "prof6", bio: "Best known for “Bulworth,” which was nominated for Academy, Golden Globe, and WGA Awards for best screenplay, and won the LA Film Critics Best Screenplay award, Jeremy Pikser got his start working as a special consultant and uncredited writer on the film “Reds” (also nominated for an Academy Award for screenplay). He wrote “The Lemon Sisters,” starring Diane Keaton, Carol Kane, Elliott Gould and Ruben Blades, and “War, Inc.”, starring John Cusack, Marisa Tomei, Ben Kingsley, and Hilary Duff. Before joining the faculty at Amirata University, he taught graduate screenwriting at New York University Tisch School for the Arts, Department of Dramatic Writing. He has worked with developing screenwriters and directors in screenwriting labs in the US, Europe, and Latin America.")
+Course.create(title: "Composition II", description: "This course is an introduction to writing about literature. The course is designed for students to practice close reading and organizing evidence to support their written interpretation and analysis of literary texts. The course offers students continued practice in drafting, revising, and editing essays. A primary goal for students is to produce clear, well-developed, well-organized, grammatical writing. For at least one essay, students use research materials.")
 
+Course.create(title: "Creative Writing", description: "This course, conducted as a workshop, is for students interested in exploring their writing style within the basic imaginative genres: fiction, creative non-fiction, poetry, and script writing. Students will read and analyze literary models and then focus on their own writing, partaking in peer revision. Students are expected to complete one of the following: attend a literary reading; submit to or work on the student literary magazine Luna; participate in an activity sponsored by the Creative Writing Club or Creative Writing Project.")
 
-# ProfessorCourses
-ProfessorCourse.create(professor_id: 1, course_id: 1, location: "Room 11", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
-ProfessorCourse.create(professor_id: 1, course_id: 2, location: "Room 12", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
-ProfessorCourse.create(professor_id: 5, course_id: 3, location: "Room 53", start_date: Date.new(2019, 1, 25), end_date: Date.new(2019, 5, 12))
-ProfessorCourse.create(professor_id: 6, course_id: 4, location: "Room 64", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
-ProfessorCourse.create(professor_id: 1, course_id: 5, location: "Room 15", start_date: Date.new(2019, 1, 25), end_date: Date.new(2019, 5, 12))
-ProfessorCourse.create(professor_id: 5, course_id: 6, location: "Room 56", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
-ProfessorCourse.create(professor_id: 6 , course_id: 7, location: "Room 67", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
-ProfessorCourse.create(professor_id: 5, course_id: 8, location: "Room 58", start_date: Date.new(2019, 1, 25), end_date: Date.new(2019, 5, 12))
-ProfessorCourse.create(professor_id: 1, course_id: 9, location: "Room 19", start_date: Date.new(2019, 1, 25), end_date: Date.new(2019, 5, 12))
+Course.create(title: "Fiction Writing", description: "This course, conducted as a workshop, is for students who are interested in exploring fiction writing and discovering unique voices as storytellers. Students will read and analyze literary models to explore narrative techniques and then produce their own writing, partaking in peer revision. Students are expected to complete one of the following: attend a literary reading; submit to or work on the student literary magazine Luna; participate in an activity sponsored by the Creative Writing Club or Creative Writing Project.")
 
+Course.create(title: "Poetry Writing", description: "This course, conducted as a workshop, is for students interested in exploring the craft or poetry. Students will read and analyze classic and contemporary poems and then craft their own property, partaking in per revision. Students are expected to complete one of the following: attend a literary reading; submit to or work on the student literary magazine Luna; participate in an activity sponsored by the Creative Writing Club.")
 
-#Sections
-Section.create(day: "Monday", start_time: Time.now, end_time: Time.now, professor_course_id: 1)
-Section.create(day: "Wednesday", start_time: Time.now, end_time: Time.now, professor_course_id: 1)
-Section.create(day: "Tuesday", start_time: Time.now, end_time: Time.now, professor_course_id: 2)
-Section.create(day: "Thursday", start_time: Time.now, end_time: Time.now, professor_course_id: 2)
-Section.create(day: "Friday", start_time: Time.now, end_time: Time.now, professor_course_id: 8)
-Section.create(day: "Saturday", start_time: Time.now, end_time: Time.now, professor_course_id: 8)
-Section.create(day: "Tuesday", start_time: Time.now, end_time: Time.now, professor_course_id: 5)
-Section.create(day: "Thursday", start_time: Time.now, end_time: Time.now, professor_course_id: 5)
+######################### 6 - 9 #####################
 
+Course.create(title: "Computer Science I", description: "This course is an introduction to computer programming and algorithmic problem solving using an object-oriented, high level programming language. Emphasis is placed on problem solving strategies that utilize multiple classes and methods. This course will focus on the following concepts: algorithm implementation, modular development, documentation, abstraction and coding along with problem solving strategies. Includes supervised hands-on component.")
 
-#StudentProfessorCourses
-StudentProfessorCourse.create(professor_course_id: 1, student_id: 1, grade: "A")
-StudentProfessorCourse.create(professor_course_id: 7, student_id: 1, grade: "")
-StudentProfessorCourse.create(professor_course_id: 8, student_id: 1, grade: "C-")
-StudentProfessorCourse.create(professor_course_id: 1, student_id: 2, grade: "B-")
-StudentProfessorCourse.create(professor_course_id: 7, student_id: 2, grade: "D")
-StudentProfessorCourse.create(professor_course_id: 1, student_id: 3, grade: "A+")
-StudentProfessorCourse.create(professor_course_id: 8, student_id: 3, grade: "B-")
-StudentProfessorCourse.create(professor_course_id: 8, student_id: 4, grade: "D")
-StudentProfessorCourse.create(professor_course_id: 1, student_id: 6, grade: "A+")
-StudentProfessorCourse.create(professor_course_id: 2, student_id: 6, grade: "B-")
-StudentProfessorCourse.create(professor_course_id: 8, student_id: 6, grade: "")
-StudentProfessorCourse.create(professor_course_id: 4, student_id: 6, grade: "A+")
-StudentProfessorCourse.create(professor_course_id: 5, student_id: 6, grade: "")
-StudentProfessorCourse.create(professor_course_id: 2, student_id: 7, grade: "A+")
-StudentProfessorCourse.create(professor_course_id: 8, student_id: 7, grade: "")
-StudentProfessorCourse.create(professor_course_id: 6, student_id: 7, grade: "A+")
-StudentProfessorCourse.create(professor_course_id: 5, student_id: 7, grade: "")
-#Requirements
+Course.create(title: "Computer Science II", description: "This course expands on the design of object-oriented programs introduced in Computer Science I. Students will be introduced to abstract data types including stacks, queues, and lists. Emphasis is placed on the design and implementation of these abstract data types as well as applications that utilize them. Object-oriented programming concepts such as composition, inheritance, polymorphism, and exception handling are utilized throughout this course. An introduction to binary-trees and recursion is provided. Includes supervised hands-on laboratory component")
+
+Course.create(title: "C Programming Language", description: "The C programming language is widely used in both the computer industry and as a tool for studying advanced topics in the area of Computer Science. Topics include language syntax, scalar and compound data types, pointers, functions, operators, modular coding practices and files. Both the ANSI version and the traditional C are discussed with emphasis on the former.")
+
+Course.create(title: "Data Structures", description: "This course introduces the programming literate student to the advanced data types and structures of priority queues, hash tables, and search trees. The concepts covered in this course include recursion, algorithm efficiency, best and worst time analysis, and advanced tree structures and graphs.")
+
+######################### 10 - 13 #####################
+
+Course.create(title: "Accounting I", description: "This course is an introduction to financial statements, analysis of the statements, and accounting concepts for business entities. Other topics include cash, receivables, inventory, non-current assets, and current liabilities.")
+
+Course.create(title: "Accounting II", description: "This course is a continuing introduction to accounting concepts for business entities. The course focuses on accounting concepts for long term liabilities, stockholders' equity, financial statement analysis as well as specific accounting concepts relating to statement of cash flows and managerial accounting.")
+
+Course.create(title: "Intermediate Accounting I", description: "This course examines the theory and concepts of financial accounting as expressed by authoritative pronouncements of the Financial Accounting Standards Board and the Accounting Principles Board. The course provides a review of the accounting cycle and focuses on the financial reporting which includes the preparation and analysis of the balance sheet, the income statement, and the statement of changes in stockholder's equity. The course also provides and introduction to the others aspects of financial reporting and analysis. Additional topics covered include specific accounting concepts relating to current assets, plant assets, intangibles, revenue recognition, and the time value of money.")
+
+Course.create(title: "Intermediate Accounting II", description: "This course continues to examine the theory and concepts of financial accounting as expressed by authoritative pronouncements of the Financial Accounting Standards Board and the Accounting Principles Board. The course focuses on the preparation and analysis of the statement of cash flows and specific accounting concepts relating to non-current assets, current and long-term liabilities, accounting for income taxes, leases, and post employment benefits. Additional topics covered include contingencies, contributed capital, accounting changes and errors, and earnings per share.")
+
+######################### 14 - 17 #####################
+
+Course.create(title: "Art History (Renaissance)", description: "Architecture, sculpture and painting in Western Europe from 1300 to 1600. An examination of the styles of the Renaissance and Mannerism in Northern and Southern Europe.")
+
+Course.create(title: "Art History (Baroque through Realism)", description: "Architecture, sculpture and painting in Europe and the Americas from the 17th century through the mid 19th century.")
+
+Course.create(title: "Principles of 2-Dimensional Design", description: "Required of art majors. A foundation course in design on a 2-dimensional surface. This course explores the elements of line, shape, value, color, and texture and principles of design and its relationship to composition. Subject and content are components of study as well. Students are introduced to a conceptual and visual vocabulary as art applies to the visual arts. Average cost of supplies: $100.")
+
+Course.create(title: "Principles of 3-Dimensional Design", description: "Required of art majors. A foundation course in design in 3-dimensional space. This course explores the elements of line, form, value, color and texture and their application to fine and applied art. This involves 3-dimensional constructions in such materials as board, plaster, clay, plastics, etc. Average cost for supplies: $100.")
+
+######################### 18 - 21 #####################
+
+Course.create(title: "Introduction to College Biology I", description: "Life processes are studied to develop an understanding of structures and functions of organisms. Major topics include the scientific method, cell structure and function, and a survey of human anatomy and physiology. Laboratory includes the dissection of a typical vertebrate.")
+
+Course.create(title: "Introduction to College Biology II", description: "A survey course which explores the basic biological principles of reproduction and development, classical and molecular genetics, evolution, behavior and ecology. The diversity of life is examined in the laboratory as well as through field trip experiences.")
+
+Course.create(title: "Zoology", description: "A survey of the structure, physiology, adaptations, and life cycles of animals. Laboratory includes a study of microscopic forms, dissection of more advanced invertebrates, and selected vertebrates including frog, fetal pig, and perch. Field trip identification of local fauna is included as one of the course objectives. Course fulfills one semester of a laboratory science for students who have interest in or desire to pursue studies in zoology, wildlife, marine biology, and ecology.")
+
+Course.create(title: "Human Genetics", description: "Human Genetics examines the basic concepts of DNA and normal and abnormal gene function in human development and life. A point of emphasis is the relationship between genetic material and environmental impacts, including radiation, chemicals and viral infection. Genetic engineering, birth defects, DNA fingerprinting, gene therapy, cancer and the human problems associated with these subjects are discussed. Laboratory exercises involve work with living organisms.")
+
+###################### Requirements ##########################
+
 Requirement.create(major_id: 1, course_id: 1)
 Requirement.create(major_id: 1, course_id: 2)
-Requirement.create(major_id: 1, course_id: 3)
-Requirement.create(major_id: 1, course_id: 8)
+Requirement.create(major_id: 1, course_id: 10)
+Requirement.create(major_id: 1, course_id: 11)
+Requirement.create(major_id: 1, course_id: 12)
+Requirement.create(major_id: 1, course_id: 13)
+
 Requirement.create(major_id: 2, course_id: 1)
 Requirement.create(major_id: 2, course_id: 2)
-Requirement.create(major_id: 2, course_id: 3)
-Requirement.create(major_id: 2, course_id: 7)
-Requirement.create(major_id: 3, course_id: 4)
-Requirement.create(major_id: 3, course_id: 7)
-Requirement.create(major_id: 3, course_id: 8)
+Requirement.create(major_id: 2, course_id: 14)
+Requirement.create(major_id: 2, course_id: 15)
+Requirement.create(major_id: 2, course_id: 16)
+Requirement.create(major_id: 2, course_id: 17)
+
 Requirement.create(major_id: 3, course_id: 1)
+Requirement.create(major_id: 3, course_id: 2)
+Requirement.create(major_id: 3, course_id: 18)
+Requirement.create(major_id: 3, course_id: 19)
+Requirement.create(major_id: 3, course_id: 20)
+Requirement.create(major_id: 3, course_id: 21)
+
+Requirement.create(major_id: 4, course_id: 1)
+Requirement.create(major_id: 4, course_id: 2)
+Requirement.create(major_id: 4, course_id: 6)
+Requirement.create(major_id: 4, course_id: 7)
+Requirement.create(major_id: 4, course_id: 8)
+Requirement.create(major_id: 4, course_id: 9)
+
+Requirement.create(major_id: 5, course_id: 1)
+Requirement.create(major_id: 5, course_id: 2)
+Requirement.create(major_id: 5, course_id: 3)
+Requirement.create(major_id: 5, course_id: 4)
+Requirement.create(major_id: 5, course_id: 5)
+
+
+###################### Students #######################
+
+[
+    ["Amirata", "Khodaparast", "M"],
+    ["Hanz", "Choi", "M"],
+    ["Isiah", "VanBrackle", "M"],
+    ["Bryan", "Teng", "M"],
+    ["Derick", "Castillo", "M"],
+    ["Gabe", "Batista", "M"],
+    ["Jason", "Pitts", "M"],
+    ["Josue", "Alorro", "M"],
+    ["Kevin", "Rivera", "M"],
+    ["Kyle", "Neale", "M"],
+    ["Masud", "Ahmed", "M"],
+    ["Natsuki", "Wada", "F"],
+    ["Nkosi", "Givhan", "M"],
+    ["Roberto", "Buso-Garcia", "M"],
+    ["Rosa", "Tu", "F"],
+    ["Scarlett", "Perry", "F"],
+    ["Tyrell", "Gordon", "M"],
+    ["Winston", "Tokuhisa", "M"]
+].each do |el|
+    Student.create(first_name: el[0], last_name: el[1], gender: el[3], race: "N/A", dob: Date.new(1995, 1, 1), financial_aid: [true, false].sample, major_id: (1..5).to_a.sample, username: el[0].downcase, password: el[1].downcase)
+end
+
+################### Professors #######################
+
+Professor.create(first_name: "Eric", last_name: "Kim", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "eric", password: "kim", bio: "He's a super cool TCF at Flat Iron DUMBO.")
+
+Professor.create(first_name: "Tony", last_name: " ", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "tony", password: "tony", bio: "He's a super cool TCF at Flat Iron DUMBO.")
+
+Professor.create(first_name: "Prince", last_name: "Wilson", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "prince", password: "wilson", bio: "He's a super cool instructor at Flat Iron DUMBO.")
+
+################ ProfessorCourses ################
+
+30.times do
+    ProfessorCourse.create(professor_id: (1..3).to_a.sample, course_id: (1..21).to_a.sample, location: "Room #{(1..10).to_a.sample}", start_date: Date.new(2018, 9, 5), end_date: Date.new(2018, 12, 10))
+end
+
+################## Sections ##################
+
+ProfessorCourse.all do |prof_cou|
+    #### I know we might have duplicates but it's fine. ###
+    2.times do
+        start_hour = (9..17).to_a.sample
+        Section.create(day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].sample, start_time: Time.gm(2018, "sep", 1, start_hour), end_time: Time.gm(2018, "sep", 1, start_hour + 2), professor_course_id: prof_cou.id)
+    end
+end
+
+############### StudentProfessorCourses ##################
+
+Student.all do |stu|
+    5.times do
+        stu.create(professor_course_id: (1..30).to_a.sample, grade: "")
+    end
+end
