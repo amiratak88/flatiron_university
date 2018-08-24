@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_013728) do
+ActiveRecord::Schema.define(version: 2018_08_24_032432) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "professor"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -77,7 +85,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_013728) do
     t.string "first_name"
     t.string "last_name"
     t.string "gender"
-    t.string "ethnicity"
+    t.string "race"
     t.date "dob"
     t.boolean "financial_aid"
     t.integer "major_id"
