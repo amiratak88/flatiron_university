@@ -26,7 +26,7 @@ div {
     <div class="col-lg-6">
 <p class="lead">
 <u class="text-warning">Instructor</u></p>
-<p class="lead text-white"><%= link_to @professor.full_name, prof_bio_path %></p>
+<p class="lead text-white"><%= link_to @professor.full_name, prof_bio_path(@professor.id) %></p>
 <br/>
 <u class="lead text-warning">Location</u></p>
 <p class="lead text-white"><%= @professor_course.location %></p>

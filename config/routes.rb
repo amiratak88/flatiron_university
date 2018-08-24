@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/courses/prof_index', to: 'courses#prof_index', as: 'prof_index'
+
+
   resources :majors
   resources :requirements
   resources :professor_courses
@@ -15,7 +19,7 @@ Rails.application.routes.draw do
   ########### PROFESSORS ###############
 
   get '/professors/:id/:course_id', to: 'professors#my_course', as: 'my_course'
-  get '/professors/:id/bio', to: 'professors#bio', as: 'prof_bio'
+  get '/courses/:professor_id/bio', to: 'courses#bio', as: 'prof_bio'
 
   ############## STUDENTS ###############
 

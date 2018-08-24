@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
     def index
     end
-    
+
     def my_track
       @student = Student.find(params[:id])
       @required_prof_courses = ProfessorCourse.select do |prof_cou|
@@ -20,6 +20,11 @@ class StudentsController < ApplicationController
 
     def show
         @student = Student.find(params[:id])
+    end
+
+    def bio
+      @professor = Professor.find(params[:id])
+      render "/professors/#{@professor.id}/bio"
     end
 
     def authorized

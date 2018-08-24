@@ -1,0 +1,21 @@
+<head>
+<style>
+body {
+background-image: url("https://wallpapercave.com/wp/HVc930O.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+</style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <br/><br/>
+    <h2 class="text-warning text-center">Faculty</h2>
+    <br/><br/>
+<% @professors.each do |professor| %>
+    <h5 class="text-center"><%= link_to professor.full_name, prof_bio_path(professor) %></h5><br/>
+<% end %>
+</div>
+</body>
