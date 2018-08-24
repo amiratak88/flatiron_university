@@ -23,7 +23,25 @@ class StudentsController < ApplicationController
     end
 
     def add_course
-      StudentProfessorCourse.create(student_id: params[:id], professor_course_id: params[:professor_course_id], grade: "")
+      # @professor = ProfessorCourse.find(params[:professor_course_id]).professor
+      @student = Student.find(params[:id])
+      # if !@student.professor_courses.map(&:professor).include?(@professor)
+      #   StudentProfessorCourse.create(student_id: params[:id], professor_course_id: params[:professor_course_id], grade: "")
+      # else
+      #   flash[:errors] = ["You've already taken or are currently enrolled in this course."]
+      # end
+
+      course = ProfessorCourse.find(params[:professor_course_id]).course
+
+      el = StudentProfessorCourse.all.find do |stu_prof_cou|
+        stu_prof_cou.professor_course.course == course
+      end
+
+      if !el
+        StudentProfessorCourse.create(student_id: params[:id], professor_course_id: params[:professor_course_id], grade: "")
+      else
+        flash[:errors] = ["You've already taken or are currently enrolled in this course."]
+      end
       redirect_to my_track_path(params[:id])
 
     end

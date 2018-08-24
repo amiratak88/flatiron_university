@@ -15,37 +15,38 @@ class Student < ApplicationRecord
 
     def overall_average
       gpa = 0
-      total = self.student_professor_courses.map do |course|
-      case course.grade
-        when "A+"
-          gpa = 4
-        when "A"
-          gpa = 4.0
-        when "A-"
-          gpa = 3.7
-        when "B+"
-          gpa = 3.3
-        when "B"
-          gpa = 3.0
-        when "B-"
-          gpa = 2.7
-        when "C+"
-          gpa = 2.3
-        when "C"
-          gpa = 2.0
-        when "C-"
-          gpa = 1.7
-        when "D+"
-          gpa = 1.3
-        when "D"
-          gpa = 1.0
-        when "F"
-          gpa = 0.0
-        end
-      end.compact
+        total = self.student_professor_courses.map do |course|
+        case course.grade
+          when "A+"
+            gpa = 4
+          when "A"
+            gpa = 4.0
+          when "A-"
+            gpa = 3.7
+          when "B+"
+            gpa = 3.3
+          when "B"
+            gpa = 3.0
+          when "B-"
+            gpa = 2.7
+          when "C+"
+            gpa = 2.3
+          when "C"
+            gpa = 2.0
+          when "C-"
+            gpa = 1.7
+          when "D+"
+            gpa = 1.3
+          when "D"
+            gpa = 1.0
+          when "F"
+            gpa = 0.0
+          end
+        end.compact
       
       sum = total.inject(0) { |result, element| result + element }
-        sum.to_f/total.length
+
+        total.empty? ? "You don't have any grades yet." : (sum.to_f/total.length).round(2)
     end
 
   def required_courses_for_major

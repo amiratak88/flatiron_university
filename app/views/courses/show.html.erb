@@ -13,37 +13,41 @@ div {
 </style>
 </head>
 
+@course.professor_courses.first.semester
+
 <body>
   <div class="container-fluid">
     <br/>
 <h3 class="text-warning"><%= @course.title %></h3><br/>
+
+<h5 class="text-white"><%= @course.professor_courses.nil? ? "" : @course.professor_courses.first.semester + " " + @course.professor_courses.first.start_date.year.to_s %></h5><br>
+
 <h5 class="text-white"><%= @course.description %></h5>
 <br/><br/>
 </div>
 
 <div class="container-fluid">
   <div class="row">
+<%# ####### BEGINING OF SECTION ######## %>
+<% @professor_courses.each do |prof_cou| %>
+    <% i = 1 %>
     <div class="col-lg-6">
 <p class="lead">
-<u class="text-warning">Instructor</u></p>
-<p class="lead text-white"><%= link_to @professor.full_name, prof_bio_path(@professor.id) %></p>
-<br/>
-<u class="lead text-warning">Location</u></p>
-<p class="lead text-white"><%= @professor_course.location %></p>
-</div>
+  <u class="text-warning">Section <%= i %></u>
+</p>
 
-    <div class="col-lg-6">
-<p class="lead">
-<u class="text-warning">Schedule<br/></u></p>
-<p class="text-white"><%= @professor_course.start_date.strftime("%B %d, %Y")
- %> - <%= @professor_course.end_date.strftime("%B %d %Y")
- %></p>
-<br/>
-<% @professor_course.sections.each do |section| %>
-<p class="lead text-warning"><%= section.day %>s</p>
-<p class="text-white"><%= section.start_time.strftime("%l:%M %P") %> - <%= section.end_time.strftime("%l:%M %P") %></p><br/><br/>
-<% end %>
+<p class="lead text-white">
+  Taught by <%= prof_cou.professor.full_name %><br><br>
+  <% prof_cou.sections.each do |sec| %>
+    <u><%= sec.day %>s</u><br>
+    <%= sec.start_time.strftime("%l:%M %P") %> - <%= sec.end_time.strftime("%l:%M %P") %><br><br>
+  <% end %>
+  Location: <%= prof_cou.location %>
+</p>
 </div>
+<% i += 1 %>
+<% end %>
+<%# ####### END OF SECTION ######## %>
 </div>
 </div>
 </body>

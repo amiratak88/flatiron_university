@@ -21,13 +21,15 @@ div {
 Your Major is <%= link_to major.title, major %>.
 
 <br/><br/>
-Your overall GPA is: <%= @student.overall_average.round(2) %>
+Your overall GPA is: <span class="text-success"><%= @student.overall_average %></span>
 <br/><br/>
 
 You're currently enrolled in the following courses:
 <br/><br/>
-<% @student.courses.each do |course| %>
-<li><%= link_to course.title, course_path(course) %></li>
+<% @student.student_professor_courses.select do |stu_prof_cou|
+  stu_prof_cou.grade.empty?
+end.each do |stu_prof_cou| %>
+  <li><%= link_to stu_prof_cou.professor_course.course.title, course_path(stu_prof_cou.professor_course.course) %></li>
 <br/>
 <% end %>
 

@@ -10,12 +10,16 @@ background-attachment: fixed;
 </head>
 <br/><br/>
 <body>
-  <div class="container-fluid">
-<div class="container-fluid" text-center>
-
-<h1 class="text-warning text-center"><%= @professor.full_name %></h1>
-<br/>
-<h4 class="text-white text-justify"><%= @professor.bio %></h4>
-
+  <div class="container-fluid text-center" >
+    <h1 class="text-warning"><%= @professor.full_name %></h1>
+    <br/>
+    <img src="/../assets/<%= @professor.first_name %>.jpg" alt="Prince Picture" height="200" width="200" class="rounded">
+<br/><br/><br/>
+    <h4 class="text-white text-center"><%= @professor.bio %></h4>
+<br/><br/>
+    <p class="text-white text-justify">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet lacinia mauris. Morbi ac nibh placerat, interdum dolor a, fermentum neque. Ut ac accumsan felis. Quisque pretium tristique mi. Pellentesque in libero eu sem ornare accumsan vel eget elit. Pellentesque molestie vel augue at suscipit. Aenean a varius magna. Vestibulum luctus tortor id faucibus convallis. In at dignissim ex.
+Nam sit amet sem hendrerit, efficitur odio vel, dictum ipsum. Nullam tincidunt vestibulum hendrerit. Fusce et accumsan nibh. Suspendisse quis dictum justo. Cras congue facilisis mi, nec placerat metus sagittis quis. Maecenas vel consequat felis. Praesent eleifend venenatis leo, a pretium ex pulvinar eu. Praesent nec lorem vitae arcu fringilla suscipit. Aenean sed ligula quis mi interdum porttitor.
+</p>
 </div>
-</div?
+</div>

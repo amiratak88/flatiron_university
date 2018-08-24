@@ -26,6 +26,14 @@ div {
 You are <%= pro.to_i %>% there!
 </div>
 </div>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p class="text-warning" style="text-shadow: black 0.2em 0.2em 0.3em">
+    <br/>
+    <%= error %></p>
+    <% end %>
+<% end %>
 <% @first_table, @third_table = @student.student_professor_courses.select do |stu_prof_cou|
     stu_prof_cou.professor_course.course.majors.include?(stu_prof_cou.student.major)
 end.partition do |stu_prof_cou|
@@ -79,7 +87,7 @@ end %>
       <td><%= link_to prof_cou.professor.full_name, prof_bio_path(prof_cou.professor.id), class: 'text-warning' %></td>
       <td class="text-white"><%= prof_cou.semester %></td>
       <td class="text-white">
-        <%= link_to "Add Course", add_course_path(params[:id], professor_course_id: prof_cou.id), method: "post" %>
+        <%= link_to "Add Course", add_course_path(params[:id], professor_course_id: prof_cou.id), method: "post", class: "text-warning" %>
       </td>
     </tr>
     <% end %>
@@ -110,3 +118,4 @@ end %>
 </table>
 
 </div>
+<% flash.clear %>

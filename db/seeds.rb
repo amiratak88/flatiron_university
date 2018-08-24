@@ -130,7 +130,7 @@ end
 
 Professor.create(first_name: "Eric", last_name: "Kim", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "eric", password: "kim", bio: "He's a super cool TCF at Flat Iron DUMBO.")
 
-Professor.create(first_name: "Tony", last_name: " ", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "tony", password: "tony", bio: "He's a super cool TCF at Flat Iron DUMBO.")
+Professor.create(first_name: "Tony", last_name: "Lam", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "tony", password: "lam", bio: "He's a super cool TCF at Flat Iron DUMBO.")
 
 Professor.create(first_name: "Prince", last_name: "Wilson", gender: "M", ethnicity: "N/A", dob: Date.new(1995, 1, 1), username: "prince", password: "wilson", bio: "He's a super cool instructor at Flat Iron DUMBO.")
 
@@ -142,13 +142,14 @@ end
 
 ################## Sections ##################
 
-ProfessorCourse.all do |prof_cou|
+ProfessorCourse.all.each do |prof_cou|
     #### I know we might have duplicates but it's fine. ###
     2.times do
         start_hour = (9..17).to_a.sample
         Section.create(day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].sample, start_time: Time.gm(2018, "sep", 1, start_hour), end_time: Time.gm(2018, "sep", 1, start_hour + 2), professor_course_id: prof_cou.id)
     end
 end
+
 
 ############### StudentProfessorCourses ##################
 
