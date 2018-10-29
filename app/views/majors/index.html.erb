@@ -1,23 +1,25 @@
 <head>
-<style>
-body {
-background-image: url("https://wallpapercave.com/wp/HVc930O.jpg");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-}
-</style>
+	<style>
+		body {
+			background-image: url("https://wallpapercave.com/wp/HVc930O.jpg");
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+		}
+	</style>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <br/><br/>
-    <h2 class="text-warning text-center">Majors</h2>
-    <br/><br/>
-<% @majors.each do |major| %>
-    <h5 class="text-center"><%= link_to major.title, major_path(major) %></h5><br/>
-<% end %>
-</div>
+	<div class="container-fluid">
+		<br/><br/>
+
+		<h2 class="text-warning text-center">Majors</h2>
+		<br/><br/>
+		
+		<% @majors.each do |major| %>
+			<h5 class="text-center"><%= link_to major.title, major_path(major) %></h5><br/>
+		<% end %>
+	</div>
 </body>
 
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
