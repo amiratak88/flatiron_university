@@ -1,24 +1,36 @@
-# README
+# Flatiron University Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Administrative information system with role-based permissions and full CRUD capabilities. 
 
-Things you may want to cover:
+## Application Features
+- User is given a role (Student or Professor) with a unique username and password.
 
-* Ruby version
+- Users without a role can still access the public pages: lists  and details of courses, majors and professors.
 
-* System dependencies
+- The app will track a Student's progress as it relates to the course requirements of their specific major.
 
-* Configuration
+- A Student can Add / Drop courses and search courses by their specific major or all courses.
 
-* Database creation
+- A Professor can create a course, create a grade for a student enrolled in their specific course and update a grade for a student currently enrolled in their course.
 
-* Database initialization
 
-* How to run the test suite
+## Built With
+- Ruby on Rails using MVC design pattern
+- Sqlite3 Database using ActiveRecord
+- Bcrypt for authentication
+- Bootstrap
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Install Instructions
+1. Run `bundle install`
+2. Run `rake db:migrate`
+3. Run `rake db:seed`
+4. Run `rails s`
 
-* ...
+
+## Authors
+- **Roberto Busó-García**
+- **Amirata Khodaparast**
+
+## License
+[License](./LICENSE.md)
